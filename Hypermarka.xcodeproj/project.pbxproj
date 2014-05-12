@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		439152F51920F8040059CFC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439152F41920F8040059CFC5 /* Foundation.framework */; };
+		439152F71920F8040059CFC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439152F61920F8040059CFC5 /* CoreGraphics.framework */; };
+		439152F91920F8040059CFC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439152F81920F8040059CFC5 /* UIKit.framework */; };
+		439152FF1920F8040059CFC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 439152FD1920F8040059CFC5 /* InfoPlist.strings */; };
+		439153011920F8040059CFC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 439153001920F8040059CFC5 /* main.m */; };
+		439153051920F8040059CFC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 439153041920F8040059CFC5 /* AppDelegate.m */; };
+		439153081920F8040059CFC5 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 439153061920F8040059CFC5 /* Main_iPhone.storyboard */; };
+		4391530B1920F8040059CFC5 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 439153091920F8040059CFC5 /* Main_iPad.storyboard */; };
+		4391530E1920F8040059CFC5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4391530D1920F8040059CFC5 /* ViewController.m */; };
+		439153101920F8040059CFC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4391530F1920F8040059CFC5 /* Images.xcassets */; };
+		439153171920F8040059CFC5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439153161920F8040059CFC5 /* XCTest.framework */; };
+		439153181920F8040059CFC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439152F41920F8040059CFC5 /* Foundation.framework */; };
+		439153191920F8040059CFC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439152F81920F8040059CFC5 /* UIKit.framework */; };
+		439153211920F8040059CFC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4391531F1920F8040059CFC5 /* InfoPlist.strings */; };
+		439153231920F8040059CFC5 /* HypermarkaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 439153221920F8040059CFC5 /* HypermarkaTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4391531A1920F8040059CFC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 439152E91920F8040059CFC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 439152F01920F8040059CFC5;
+			remoteInfo = Hypermarka;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		439152F11920F8040059CFC5 /* Hypermarka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hypermarka.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		439152F41920F8040059CFC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		439152F61920F8040059CFC5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		439152F81920F8040059CFC5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		439152FC1920F8040059CFC5 /* Hypermarka-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Hypermarka-Info.plist"; sourceTree = "<group>"; };
+		439152FE1920F8040059CFC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		439153001920F8040059CFC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		439153021920F8040059CFC5 /* Hypermarka-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hypermarka-Prefix.pch"; sourceTree = "<group>"; };
+		439153031920F8040059CFC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		439153041920F8040059CFC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		439153071920F8040059CFC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		4391530A1920F8040059CFC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		4391530C1920F8040059CFC5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4391530D1920F8040059CFC5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4391530F1920F8040059CFC5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		439153151920F8040059CFC5 /* HypermarkaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HypermarkaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		439153161920F8040059CFC5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4391531E1920F8040059CFC5 /* HypermarkaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HypermarkaTests-Info.plist"; sourceTree = "<group>"; };
+		439153201920F8040059CFC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		439153221920F8040059CFC5 /* HypermarkaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HypermarkaTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		439152EE1920F8040059CFC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				439152F71920F8040059CFC5 /* CoreGraphics.framework in Frameworks */,
+				439152F91920F8040059CFC5 /* UIKit.framework in Frameworks */,
+				439152F51920F8040059CFC5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		439153121920F8040059CFC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				439153171920F8040059CFC5 /* XCTest.framework in Frameworks */,
+				439153191920F8040059CFC5 /* UIKit.framework in Frameworks */,
+				439153181920F8040059CFC5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		439152E81920F8040059CFC5 = {
+			isa = PBXGroup;
+			children = (
+				439152FA1920F8040059CFC5 /* Hypermarka */,
+				4391531C1920F8040059CFC5 /* HypermarkaTests */,
+				439152F31920F8040059CFC5 /* Frameworks */,
+				439152F21920F8040059CFC5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		439152F21920F8040059CFC5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				439152F11920F8040059CFC5 /* Hypermarka.app */,
+				439153151920F8040059CFC5 /* HypermarkaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		439152F31920F8040059CFC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				439152F41920F8040059CFC5 /* Foundation.framework */,
+				439152F61920F8040059CFC5 /* CoreGraphics.framework */,
+				439152F81920F8040059CFC5 /* UIKit.framework */,
+				439153161920F8040059CFC5 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		439152FA1920F8040059CFC5 /* Hypermarka */ = {
+			isa = PBXGroup;
+			children = (
+				439153031920F8040059CFC5 /* AppDelegate.h */,
+				439153041920F8040059CFC5 /* AppDelegate.m */,
+				439153061920F8040059CFC5 /* Main_iPhone.storyboard */,
+				439153091920F8040059CFC5 /* Main_iPad.storyboard */,
+				4391530C1920F8040059CFC5 /* ViewController.h */,
+				4391530D1920F8040059CFC5 /* ViewController.m */,
+				4391530F1920F8040059CFC5 /* Images.xcassets */,
+				439152FB1920F8040059CFC5 /* Supporting Files */,
+			);
+			path = Hypermarka;
+			sourceTree = "<group>";
+		};
+		439152FB1920F8040059CFC5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				439152FC1920F8040059CFC5 /* Hypermarka-Info.plist */,
+				439152FD1920F8040059CFC5 /* InfoPlist.strings */,
+				439153001920F8040059CFC5 /* main.m */,
+				439153021920F8040059CFC5 /* Hypermarka-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4391531C1920F8040059CFC5 /* HypermarkaTests */ = {
+			isa = PBXGroup;
+			children = (
+				439153221920F8040059CFC5 /* HypermarkaTests.m */,
+				4391531D1920F8040059CFC5 /* Supporting Files */,
+			);
+			path = HypermarkaTests;
+			sourceTree = "<group>";
+		};
+		4391531D1920F8040059CFC5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4391531E1920F8040059CFC5 /* HypermarkaTests-Info.plist */,
+				4391531F1920F8040059CFC5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		439152F01920F8040059CFC5 /* Hypermarka */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 439153261920F8040059CFC5 /* Build configuration list for PBXNativeTarget "Hypermarka" */;
+			buildPhases = (
+				439152ED1920F8040059CFC5 /* Sources */,
+				439152EE1920F8040059CFC5 /* Frameworks */,
+				439152EF1920F8040059CFC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hypermarka;
+			productName = Hypermarka;
+			productReference = 439152F11920F8040059CFC5 /* Hypermarka.app */;
+			productType = "com.apple.product-type.application";
+		};
+		439153141920F8040059CFC5 /* HypermarkaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 439153291920F8040059CFC5 /* Build configuration list for PBXNativeTarget "HypermarkaTests" */;
+			buildPhases = (
+				439153111920F8040059CFC5 /* Sources */,
+				439153121920F8040059CFC5 /* Frameworks */,
+				439153131920F8040059CFC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4391531B1920F8040059CFC5 /* PBXTargetDependency */,
+			);
+			name = HypermarkaTests;
+			productName = HypermarkaTests;
+			productReference = 439153151920F8040059CFC5 /* HypermarkaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		439152E91920F8040059CFC5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = mifors;
+				TargetAttributes = {
+					439153141920F8040059CFC5 = {
+						TestTargetID = 439152F01920F8040059CFC5;
+					};
+				};
+			};
+			buildConfigurationList = 439152EC1920F8040059CFC5 /* Build configuration list for PBXProject "Hypermarka" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 439152E81920F8040059CFC5;
+			productRefGroup = 439152F21920F8040059CFC5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				439152F01920F8040059CFC5 /* Hypermarka */,
+				439153141920F8040059CFC5 /* HypermarkaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		439152EF1920F8040059CFC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4391530B1920F8040059CFC5 /* Main_iPad.storyboard in Resources */,
+				439153101920F8040059CFC5 /* Images.xcassets in Resources */,
+				439153081920F8040059CFC5 /* Main_iPhone.storyboard in Resources */,
+				439152FF1920F8040059CFC5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		439153131920F8040059CFC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				439153211920F8040059CFC5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		439152ED1920F8040059CFC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4391530E1920F8040059CFC5 /* ViewController.m in Sources */,
+				439153051920F8040059CFC5 /* AppDelegate.m in Sources */,
+				439153011920F8040059CFC5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		439153111920F8040059CFC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				439153231920F8040059CFC5 /* HypermarkaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4391531B1920F8040059CFC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 439152F01920F8040059CFC5 /* Hypermarka */;
+			targetProxy = 4391531A1920F8040059CFC5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		439152FD1920F8040059CFC5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				439152FE1920F8040059CFC5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		439153061920F8040059CFC5 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				439153071920F8040059CFC5 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		439153091920F8040059CFC5 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4391530A1920F8040059CFC5 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		4391531F1920F8040059CFC5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				439153201920F8040059CFC5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		439153241920F8040059CFC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		439153251920F8040059CFC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		439153271920F8040059CFC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hypermarka/Hypermarka-Prefix.pch";
+				INFOPLIST_FILE = "Hypermarka/Hypermarka-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		439153281920F8040059CFC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hypermarka/Hypermarka-Prefix.pch";
+				INFOPLIST_FILE = "Hypermarka/Hypermarka-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4391532A1920F8040059CFC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Hypermarka.app/Hypermarka";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hypermarka/Hypermarka-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HypermarkaTests/HypermarkaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4391532B1920F8040059CFC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Hypermarka.app/Hypermarka";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hypermarka/Hypermarka-Prefix.pch";
+				INFOPLIST_FILE = "HypermarkaTests/HypermarkaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		439152EC1920F8040059CFC5 /* Build configuration list for PBXProject "Hypermarka" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				439153241920F8040059CFC5 /* Debug */,
+				439153251920F8040059CFC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		439153261920F8040059CFC5 /* Build configuration list for PBXNativeTarget "Hypermarka" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				439153271920F8040059CFC5 /* Debug */,
+				439153281920F8040059CFC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		439153291920F8040059CFC5 /* Build configuration list for PBXNativeTarget "HypermarkaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4391532A1920F8040059CFC5 /* Debug */,
+				4391532B1920F8040059CFC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 439152E91920F8040059CFC5 /* Project object */;
+}
