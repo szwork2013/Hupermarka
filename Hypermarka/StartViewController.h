@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  StartViewController.h
 //  Hypermarka
 //
 //  Created by Bogdan on 12.05.14.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
-@interface ViewController : UIViewController
 
-@end
+@interface StartViewController : UIViewController
+
+@end			

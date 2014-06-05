@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4320F8B71926744E0046998B /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4320F8B61926744E0046998B /* TableViewController.m */; };
+		4320F8BE192674570046998B /* Cell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4320F8B9192674570046998B /* Cell1.m */; };
+		4320F8BF192674570046998B /* Cell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4320F8BA192674570046998B /* Cell1.xib */; };
+		4320F8C0192674570046998B /* Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4320F8BC192674570046998B /* Cell2.m */; };
+		4320F8C1192674570046998B /* Cell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4320F8BD192674570046998B /* Cell2.xib */; };
+		4320F8C7192675AF0046998B /* DownAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 4320F8C3192675AF0046998B /* DownAccessory.png */; };
+		4320F8C8192675AF0046998B /* DownAccessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4320F8C4192675AF0046998B /* DownAccessory@2x.png */; };
+		4320F8C9192675AF0046998B /* UpAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 4320F8C5192675AF0046998B /* UpAccessory.png */; };
+		4320F8CA192675AF0046998B /* UpAccessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4320F8C6192675AF0046998B /* UpAccessory@2x.png */; };
+		436C99A0193CC0F9003CBF03 /* REVAnnotationsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C9996193CC0F9003CBF03 /* REVAnnotationsCollection.m */; };
+		436C99A1193CC0F9003CBF03 /* REVClusterBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C9998193CC0F9003CBF03 /* REVClusterBlock.m */; };
+		436C99A2193CC0F9003CBF03 /* REVClusterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C999A193CC0F9003CBF03 /* REVClusterManager.m */; };
+		436C99A3193CC0F9003CBF03 /* REVClusterMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C999D193CC0F9003CBF03 /* REVClusterMapView.m */; };
+		436C99A4193CC0F9003CBF03 /* REVClusterPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C999F193CC0F9003CBF03 /* REVClusterPin.m */; };
+		436C99A7193CC105003CBF03 /* REVClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C99A6193CC105003CBF03 /* REVClusterAnnotationView.m */; };
+		436C99AC193CC155003CBF03 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C99AB193CC155003CBF03 /* Singleton.m */; };
+		436C99B0193CC1A8003CBF03 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C99AF193CC1A8003CBF03 /* MapViewController.m */; };
+		436C99B5193CC1BE003CBF03 /* cluster1.png in Resources */ = {isa = PBXBuildFile; fileRef = 436C99B1193CC1BE003CBF03 /* cluster1.png */; };
+		436C99B6193CC1BE003CBF03 /* cluster1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 436C99B2193CC1BE003CBF03 /* cluster1@2x.png */; };
+		436C99B7193CC1BE003CBF03 /* pinpoint1.png in Resources */ = {isa = PBXBuildFile; fileRef = 436C99B3193CC1BE003CBF03 /* pinpoint1.png */; };
+		436C99B8193CC1BE003CBF03 /* pinpoint1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 436C99B4193CC1BE003CBF03 /* pinpoint1@2x.png */; };
 		439152F51920F8040059CFC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439152F41920F8040059CFC5 /* Foundation.framework */; };
 		439152F71920F8040059CFC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439152F61920F8040059CFC5 /* CoreGraphics.framework */; };
 		439152F91920F8040059CFC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439152F81920F8040059CFC5 /* UIKit.framework */; };
@@ -22,6 +43,11 @@
 		439153191920F8040059CFC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439152F81920F8040059CFC5 /* UIKit.framework */; };
 		439153211920F8040059CFC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4391531F1920F8040059CFC5 /* InfoPlist.strings */; };
 		439153231920F8040059CFC5 /* HypermarkaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 439153221920F8040059CFC5 /* HypermarkaTests.m */; };
+		4391532E1920F84F0059CFC5 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4391532D1920F84F0059CFC5 /* StartViewController.m */; };
+		4395825719252DC700BB086E /* ExpansionTableTestData2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4395825619252DC700BB086E /* ExpansionTableTestData2.plist */; };
+		439582591925309C00BB086E /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 439582581925309C00BB086E /* Data.plist */; };
+		A5895DA4193F0EA100411B15 /* PodcategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5895DA3193F0EA100411B15 /* PodcategoriesViewController.m */; };
+		A5895DA7193F0ECC00411B15 /* CatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5895DA6193F0ECC00411B15 /* CatalogViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +61,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4320F8B51926744E0046998B /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		4320F8B61926744E0046998B /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		4320F8B8192674570046998B /* Cell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell1.h; sourceTree = "<group>"; };
+		4320F8B9192674570046998B /* Cell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell1.m; sourceTree = "<group>"; };
+		4320F8BA192674570046998B /* Cell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell1.xib; sourceTree = "<group>"; };
+		4320F8BB192674570046998B /* Cell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell2.h; sourceTree = "<group>"; };
+		4320F8BC192674570046998B /* Cell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell2.m; sourceTree = "<group>"; };
+		4320F8BD192674570046998B /* Cell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell2.xib; sourceTree = "<group>"; };
+		4320F8C3192675AF0046998B /* DownAccessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownAccessory.png; sourceTree = "<group>"; };
+		4320F8C4192675AF0046998B /* DownAccessory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DownAccessory@2x.png"; sourceTree = "<group>"; };
+		4320F8C5192675AF0046998B /* UpAccessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UpAccessory.png; sourceTree = "<group>"; };
+		4320F8C6192675AF0046998B /* UpAccessory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UpAccessory@2x.png"; sourceTree = "<group>"; };
+		436C9995193CC0F9003CBF03 /* REVAnnotationsCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REVAnnotationsCollection.h; sourceTree = "<group>"; };
+		436C9996193CC0F9003CBF03 /* REVAnnotationsCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REVAnnotationsCollection.m; sourceTree = "<group>"; };
+		436C9997193CC0F9003CBF03 /* REVClusterBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REVClusterBlock.h; sourceTree = "<group>"; };
+		436C9998193CC0F9003CBF03 /* REVClusterBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REVClusterBlock.m; sourceTree = "<group>"; };
+		436C9999193CC0F9003CBF03 /* REVClusterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REVClusterManager.h; sourceTree = "<group>"; };
+		436C999A193CC0F9003CBF03 /* REVClusterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REVClusterManager.m; sourceTree = "<group>"; };
+		436C999B193CC0F9003CBF03 /* REVClusterMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REVClusterMap.h; sourceTree = "<group>"; };
+		436C999C193CC0F9003CBF03 /* REVClusterMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REVClusterMapView.h; sourceTree = "<group>"; };
+		436C999D193CC0F9003CBF03 /* REVClusterMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REVClusterMapView.m; sourceTree = "<group>"; };
+		436C999E193CC0F9003CBF03 /* REVClusterPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REVClusterPin.h; sourceTree = "<group>"; };
+		436C999F193CC0F9003CBF03 /* REVClusterPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REVClusterPin.m; sourceTree = "<group>"; };
+		436C99A5193CC105003CBF03 /* REVClusterAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REVClusterAnnotationView.h; sourceTree = "<group>"; };
+		436C99A6193CC105003CBF03 /* REVClusterAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REVClusterAnnotationView.m; sourceTree = "<group>"; };
+		436C99AA193CC155003CBF03 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		436C99AB193CC155003CBF03 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
+		436C99AE193CC1A8003CBF03 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		436C99AF193CC1A8003CBF03 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		436C99B1193CC1BE003CBF03 /* cluster1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cluster1.png; sourceTree = "<group>"; };
+		436C99B2193CC1BE003CBF03 /* cluster1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cluster1@2x.png"; sourceTree = "<group>"; };
+		436C99B3193CC1BE003CBF03 /* pinpoint1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinpoint1.png; sourceTree = "<group>"; };
+		436C99B4193CC1BE003CBF03 /* pinpoint1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinpoint1@2x.png"; sourceTree = "<group>"; };
 		439152F11920F8040059CFC5 /* Hypermarka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hypermarka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439152F41920F8040059CFC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		439152F61920F8040059CFC5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,6 +114,14 @@
 		4391531E1920F8040059CFC5 /* HypermarkaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HypermarkaTests-Info.plist"; sourceTree = "<group>"; };
 		439153201920F8040059CFC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		439153221920F8040059CFC5 /* HypermarkaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HypermarkaTests.m; sourceTree = "<group>"; };
+		4391532C1920F84F0059CFC5 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		4391532D1920F84F0059CFC5 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		4395825619252DC700BB086E /* ExpansionTableTestData2.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ExpansionTableTestData2.plist; sourceTree = "<group>"; };
+		439582581925309C00BB086E /* Data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
+		A5895DA2193F0EA100411B15 /* PodcategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PodcategoriesViewController.h; sourceTree = "<group>"; };
+		A5895DA3193F0EA100411B15 /* PodcategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PodcategoriesViewController.m; sourceTree = "<group>"; };
+		A5895DA5193F0ECC00411B15 /* CatalogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogViewController.h; sourceTree = "<group>"; };
+		A5895DA6193F0ECC00411B15 /* CatalogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +148,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4320F8C2192674870046998B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4320F8BD192674570046998B /* Cell2.xib */,
+				4320F8B8192674570046998B /* Cell1.h */,
+				4320F8B9192674570046998B /* Cell1.m */,
+				4320F8BA192674570046998B /* Cell1.xib */,
+				4320F8BB192674570046998B /* Cell2.h */,
+				4320F8BC192674570046998B /* Cell2.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		436C99A8193CC10D003CBF03 /* Кластер */ = {
+			isa = PBXGroup;
+			children = (
+				436C9995193CC0F9003CBF03 /* REVAnnotationsCollection.h */,
+				436C9996193CC0F9003CBF03 /* REVAnnotationsCollection.m */,
+				436C9997193CC0F9003CBF03 /* REVClusterBlock.h */,
+				436C9998193CC0F9003CBF03 /* REVClusterBlock.m */,
+				436C9999193CC0F9003CBF03 /* REVClusterManager.h */,
+				436C999A193CC0F9003CBF03 /* REVClusterManager.m */,
+				436C999B193CC0F9003CBF03 /* REVClusterMap.h */,
+				436C999C193CC0F9003CBF03 /* REVClusterMapView.h */,
+				436C999D193CC0F9003CBF03 /* REVClusterMapView.m */,
+				436C999E193CC0F9003CBF03 /* REVClusterPin.h */,
+				436C999F193CC0F9003CBF03 /* REVClusterPin.m */,
+			);
+			name = "Кластер";
+			sourceTree = "<group>";
+		};
+		436C99A9193CC11C003CBF03 /* Аннотации */ = {
+			isa = PBXGroup;
+			children = (
+				436C99A5193CC105003CBF03 /* REVClusterAnnotationView.h */,
+				436C99A6193CC105003CBF03 /* REVClusterAnnotationView.m */,
+			);
+			name = "Аннотации";
+			sourceTree = "<group>";
+		};
+		436C99AD193CC161003CBF03 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				436C99AA193CC155003CBF03 /* Singleton.h */,
+				436C99AB193CC155003CBF03 /* Singleton.m */,
+			);
+			name = Singleton;
+			sourceTree = "<group>";
+		};
 		439152E81920F8040059CFC5 = {
 			isa = PBXGroup;
 			children = (
@@ -114,14 +230,28 @@
 		439152FA1920F8040059CFC5 /* Hypermarka */ = {
 			isa = PBXGroup;
 			children = (
-				439153031920F8040059CFC5 /* AppDelegate.h */,
-				439153041920F8040059CFC5 /* AppDelegate.m */,
+				436C99AD193CC161003CBF03 /* Singleton */,
 				439153061920F8040059CFC5 /* Main_iPhone.storyboard */,
 				439153091920F8040059CFC5 /* Main_iPad.storyboard */,
+				439153031920F8040059CFC5 /* AppDelegate.h */,
+				439153041920F8040059CFC5 /* AppDelegate.m */,
+				A5895DA2193F0EA100411B15 /* PodcategoriesViewController.h */,
+				A5895DA3193F0EA100411B15 /* PodcategoriesViewController.m */,
+				A5895DA5193F0ECC00411B15 /* CatalogViewController.h */,
+				A5895DA6193F0ECC00411B15 /* CatalogViewController.m */,
+				4391532C1920F84F0059CFC5 /* StartViewController.h */,
+				4391532D1920F84F0059CFC5 /* StartViewController.m */,
 				4391530C1920F8040059CFC5 /* ViewController.h */,
 				4391530D1920F8040059CFC5 /* ViewController.m */,
-				4391530F1920F8040059CFC5 /* Images.xcassets */,
+				436C99AE193CC1A8003CBF03 /* MapViewController.h */,
+				436C99AF193CC1A8003CBF03 /* MapViewController.m */,
+				436C99A8193CC10D003CBF03 /* Кластер */,
+				436C99A9193CC11C003CBF03 /* Аннотации */,
+				4320F8B51926744E0046998B /* TableViewController.h */,
+				4320F8B61926744E0046998B /* TableViewController.m */,
+				4320F8C2192674870046998B /* Cells */,
 				439152FB1920F8040059CFC5 /* Supporting Files */,
+				4391530F1920F8040059CFC5 /* Images.xcassets */,
 			);
 			path = Hypermarka;
 			sourceTree = "<group>";
@@ -129,6 +259,16 @@
 		439152FB1920F8040059CFC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				436C99B1193CC1BE003CBF03 /* cluster1.png */,
+				436C99B2193CC1BE003CBF03 /* cluster1@2x.png */,
+				436C99B3193CC1BE003CBF03 /* pinpoint1.png */,
+				436C99B4193CC1BE003CBF03 /* pinpoint1@2x.png */,
+				4320F8C3192675AF0046998B /* DownAccessory.png */,
+				4320F8C4192675AF0046998B /* DownAccessory@2x.png */,
+				4320F8C5192675AF0046998B /* UpAccessory.png */,
+				4320F8C6192675AF0046998B /* UpAccessory@2x.png */,
+				439582581925309C00BB086E /* Data.plist */,
+				4395825619252DC700BB086E /* ExpansionTableTestData2.plist */,
 				439152FC1920F8040059CFC5 /* Hypermarka-Info.plist */,
 				439152FD1920F8040059CFC5 /* InfoPlist.strings */,
 				439153001920F8040059CFC5 /* main.m */,
@@ -231,10 +371,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				439582591925309C00BB086E /* Data.plist in Resources */,
 				4391530B1920F8040059CFC5 /* Main_iPad.storyboard in Resources */,
+				4320F8C9192675AF0046998B /* UpAccessory.png in Resources */,
 				439153101920F8040059CFC5 /* Images.xcassets in Resources */,
+				436C99B5193CC1BE003CBF03 /* cluster1.png in Resources */,
+				436C99B6193CC1BE003CBF03 /* cluster1@2x.png in Resources */,
+				4320F8CA192675AF0046998B /* UpAccessory@2x.png in Resources */,
+				4320F8C8192675AF0046998B /* DownAccessory@2x.png in Resources */,
 				439153081920F8040059CFC5 /* Main_iPhone.storyboard in Resources */,
+				4320F8C7192675AF0046998B /* DownAccessory.png in Resources */,
+				436C99B7193CC1BE003CBF03 /* pinpoint1.png in Resources */,
+				4320F8C1192674570046998B /* Cell2.xib in Resources */,
+				4395825719252DC700BB086E /* ExpansionTableTestData2.plist in Resources */,
+				4320F8BF192674570046998B /* Cell1.xib in Resources */,
 				439152FF1920F8040059CFC5 /* InfoPlist.strings in Resources */,
+				436C99B8193CC1BE003CBF03 /* pinpoint1@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,8 +406,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				4391530E1920F8040059CFC5 /* ViewController.m in Sources */,
+				436C99A2193CC0F9003CBF03 /* REVClusterManager.m in Sources */,
+				A5895DA7193F0ECC00411B15 /* CatalogViewController.m in Sources */,
+				436C99A7193CC105003CBF03 /* REVClusterAnnotationView.m in Sources */,
+				4391532E1920F84F0059CFC5 /* StartViewController.m in Sources */,
 				439153051920F8040059CFC5 /* AppDelegate.m in Sources */,
+				436C99A0193CC0F9003CBF03 /* REVAnnotationsCollection.m in Sources */,
+				4320F8BE192674570046998B /* Cell1.m in Sources */,
+				436C99A1193CC0F9003CBF03 /* REVClusterBlock.m in Sources */,
+				436C99AC193CC155003CBF03 /* Singleton.m in Sources */,
+				4320F8B71926744E0046998B /* TableViewController.m in Sources */,
+				A5895DA4193F0EA100411B15 /* PodcategoriesViewController.m in Sources */,
 				439153011920F8040059CFC5 /* main.m in Sources */,
+				436C99A4193CC0F9003CBF03 /* REVClusterPin.m in Sources */,
+				436C99B0193CC1A8003CBF03 /* MapViewController.m in Sources */,
+				436C99A3193CC0F9003CBF03 /* REVClusterMapView.m in Sources */,
+				4320F8C0192674570046998B /* Cell2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,12 +556,16 @@
 		439153271920F8040059CFC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hypermarka/Hypermarka-Prefix.pch";
 				INFOPLIST_FILE = "Hypermarka/Hypermarka-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -403,12 +573,16 @@
 		439153281920F8040059CFC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hypermarka/Hypermarka-Prefix.pch";
 				INFOPLIST_FILE = "Hypermarka/Hypermarka-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -474,6 +648,7 @@
 				439153281920F8040059CFC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		439153291920F8040059CFC5 /* Build configuration list for PBXNativeTarget "HypermarkaTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +657,7 @@
 				4391532B1920F8040059CFC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

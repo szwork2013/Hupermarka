@@ -25,5 +25,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewDidAppear:(BOOL)animated{
+    if ([Singleton sharedMySingleton].close) {
+        [self dismissModalViewControllerAnimated:NO];
+    }
+    else [super viewDidAppear:animated];
+}
 @end
