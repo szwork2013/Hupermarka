@@ -41,20 +41,23 @@
     self.isOpen = NO;
     self.cat = NO;
 }
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+- (void)viewDidAppear:(BOOL)animated{
     self.TitleNavigation.title = [Singleton sharedMySingleton].TextLabelCell;
     if ([self.TitleNavigation.title  isEqual: @"Стройка и ремонт"]) {
         NSLog(@"ALLRIGHT");
     }
     else{
+        NSLog(@"self.Tite = %@", self.TitleNavigation.title);
         UIStoryboard *storyboard = self.storyboard;
         PodcategoriesViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"404error"];
         
         [self presentViewController:finished animated:YES completion:NULL];
     }
+}
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     UIDeviceOrientation orientation1 = [[UIDevice currentDevice] orientation];
     [Singleton sharedMySingleton].orientation = orientation1;
@@ -123,7 +126,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
     {
         int count;
-        count = [[Singleton sharedMySingleton].Titles count];
+        count = [[Singleton sharedMySingleton].Titles2 count];
         return count;
     }
          
@@ -131,7 +134,7 @@
     {
         if (self.isOpen) {
             if (self.selectIndex.section == section) {
-                NSMutableArray *TitleList = [[Singleton sharedMySingleton].podsections valueForKey:@"title"];
+                NSMutableArray *TitleList = [[Singleton sharedMySingleton].podsections2 valueForKey:@"title"];
                 return [[TitleList objectAtIndex:section] count]+1;;
         }
     }
@@ -153,8 +156,8 @@
                 cell = [[[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil] objectAtIndex:0];
             }
             
-            NSMutableArray *TitleList = [[Singleton sharedMySingleton].podsections valueForKey:@"title"];
-            NSMutableArray *NamesList = [[Singleton sharedMySingleton].podsections valueForKey:@"name"];
+            NSMutableArray *TitleList = [[Singleton sharedMySingleton].podsections2 valueForKey:@"title"];
+            NSMutableArray *NamesList = [[Singleton sharedMySingleton].podsections2 valueForKey:@"name"];
             NSMutableArray *list = [TitleList objectAtIndex:self.selectIndex.section];
             cell.titleLabel.text = [list objectAtIndex:indexPath.row-1];
             lists = [NamesList objectAtIndex:self.selectIndex.section];
@@ -173,7 +176,7 @@
                 [cell.titleLabel setFont:[UIFont systemFontOfSize:16]];
             }
             else{
-                name = [[[Singleton sharedMySingleton].Titles objectAtIndex:indexPath.section]capitalizedString];
+                name = [[[Singleton sharedMySingleton].Titles2 objectAtIndex:indexPath.section]capitalizedString];
             }
             cell.titleLabel.text = name;
             if (self.cat) {
@@ -212,7 +215,14 @@
             }else
             {
                 if (isOpen) {
-                   
+                    NSMutableArray *NamesList = [[Singleton sharedMySingleton].podsections2 valueForKey:@"name"];
+                    NSString *SelectedString = [NSString stringWithString:[[NamesList objectAtIndex:indexPath.section]objectAtIndex:indexPath.row-1]];
+                    [Singleton sharedMySingleton].SelectedName =SelectedString;
+                    UIStoryboard *storyboard = self.storyboard;
+                    PodcategoriesViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"CatalogViewController"];
+                    
+                    [self presentViewController:finished animated:YES completion:NULL];
+                    
         }
     }
                 
@@ -230,8 +240,7 @@
         
         [self.expansionTableView beginUpdates];
         
-        NSMutableArray *TitleList = [[Singleton sharedMySingleton].podsections valueForKey:@"title"];
-        NSLog(@"Titlelist: %@", TitleList);
+        NSMutableArray *TitleList = [[Singleton sharedMySingleton].podsections2 valueForKey:@"title"];
         int section = self.selectIndex.section;
         
         int contentCount = [[TitleList objectAtIndex:section] count];

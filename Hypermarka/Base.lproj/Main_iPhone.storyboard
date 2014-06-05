@@ -52,7 +52,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="cwW-kl-13w">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Jtf-nL-9Tn">
+                                        <barButtonItem key="leftBarButtonItem" title="Назад" id="Jtf-nL-9Tn">
                                             <connections>
                                                 <action selector="BackButton:" destination="cxj-pD-2oa" id="W2V-JY-dnm"/>
                                             </connections>
@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BnY-9e-fhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="426" y="589"/>
+            <point key="canvasLocation" x="427" y="587"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="di8-e3-glM">
@@ -96,6 +96,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="seM-2p-V4E">
+                                <rect key="frame" x="118" y="258" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="На главную">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="modal" id="WXb-i7-5CO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -107,12 +117,36 @@
         <!--Catalog View Controller-->
         <scene sceneID="QQ9-43-YOD">
             <objects>
-                <viewController id="t5U-et-MAt" customClass="CatalogViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CatalogViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t5U-et-MAt" customClass="CatalogViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gmx-no-rb5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="KRI-Oc-i88">
+                                <rect key="frame" x="0.0" y="13" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="Jw2-3L-psR">
+                                        <barButtonItem key="leftBarButtonItem" title="Назад" id="uXF-ai-pgi"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="iE2-wa-dym">
+                                <rect key="frame" x="0.0" y="57" width="320" height="423"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="t5U-et-MAt" id="LyE-3e-UEZ"/>
+                                    <outlet property="delegate" destination="t5U-et-MAt" id="2ze-8b-kuF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="CatTableView" destination="iE2-wa-dym" id="AnH-Bv-GYi"/>
+                        <outlet property="NivigationTitle" destination="Jw2-3L-psR" id="czC-ZL-FBL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U2c-mY-Uwx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -188,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDf-ds-uG0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="28"/>
+            <point key="canvasLocation" x="766" y="22"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="DZg-PK-lmf">
@@ -199,7 +233,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9HN-Qy-jnS">
-                                <rect key="frame" x="0.0" y="61" width="320" height="419"/>
+                                <rect key="frame" x="0.0" y="57" width="320" height="423"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -208,7 +242,7 @@
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" id="6mg-Uw-3vv">
-                                <rect key="frame" x="0.0" y="17" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="13" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Выберите категорию" id="xYg-su-atX"/>
@@ -232,6 +266,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="lsj-wZ-kLn"/>
+        <segue reference="rgo-n4-FTv"/>
     </inferredMetricsTieBreakers>
 </document>

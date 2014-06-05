@@ -22,6 +22,9 @@
 @property (nonatomic)UIDeviceOrientation orientation;
 @property (nonatomic, retain)NSString *TextLabelCell;
 @property (nonatomic, retain)NSMutableArray *Titles2;
+@property (nonatomic, retain)NSMutableArray *podsections2;
+@property (nonatomic, retain)NSMutableArray *names2;
+@property (nonatomic, retain)NSString *SelectedName;
 
 -(void)test;
 
