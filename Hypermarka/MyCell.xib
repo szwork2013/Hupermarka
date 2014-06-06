@@ -51,6 +51,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" red="0.25490197539329529" green="0.94117653369903564" blue="0.12941177189350128" alpha="1" colorSpace="deviceRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="4" secondAttribute="trailing" constant="5" id="1BU-Fy-bAL"/>
                     <constraint firstAttribute="centerY" secondItem="4" secondAttribute="centerY" id="OoD-N9-HuI"/>

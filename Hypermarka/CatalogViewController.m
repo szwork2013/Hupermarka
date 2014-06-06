@@ -83,7 +83,10 @@
     
     return cell;
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [indexPath row] * 5;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
