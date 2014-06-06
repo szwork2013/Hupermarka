@@ -29,8 +29,9 @@
 {
     [super viewDidLoad];
     NSLog(@"Name: %@", [Singleton sharedMySingleton].SelectedName);
+    NSString *url = [NSString stringWithFormat:@"http://work.hypermarka.com/hm/proto-showcase?shop=0&sort=price&section=stroy&subsection=%@&pg=all&theme=11", [Singleton sharedMySingleton].SelectedName];
     NSData *allCoursesData = [[NSData alloc] initWithContentsOfURL:
-                              [NSURL URLWithString:@"http://work.hypermarka.com/hm/proto-showcase?shop=0&sort=price&section=stroy&subsection=electroinstrument&pg=all&theme=11"]];
+                              [NSURL URLWithString:url]];
     
     NSString *allData = [[NSString alloc] initWithData:allCoursesData encoding:NSUTF8StringEncoding];
     //    парсинг оных
@@ -53,11 +54,33 @@
                                      JSONObjectWithData:data
                                      options:NSJSONReadingMutableContainers
                                      error:&error];
-    NSString *NavigationTitle = [NSString stringWithFormat:@"%@", [[DataDict valueForKey:@"title"] objectAtIndex:0]];
-    NivigationTitle.title = NavigationTitle;
+    NivigationTitle.title = [Singleton sharedMySingleton].SelectedTitle;
     
     NSMutableArray *SVC = [DataDict valueForKey:@"svc"];
-    self.Titles = [SVC valueForKey:@"title"];
+    if (!self.Titles) {
+        self.Titles = [NSMutableArray array];
+    }
+    if (!self.Images) {
+        self.Images = [NSMutableArray array];
+    }
+    if (!self.ImagesNames) {
+        self.ImagesNames = [NSMutableArray array];
+    }
+    
+    self.Images = [[SVC valueForKey:@"image"] objectAtIndex:0];
+    for (int i = 0; i<[self.Images count]; i++) {
+        
+        if ([self.Images objectAtIndex:i] == [NSNull null]) {
+            [self.ImagesNames addObject:@"http://work.hypermarka.com/images/site/foto.gif"];
+        }
+        else{
+            [self.ImagesNames addObject:[NSString stringWithFormat:@"http://work.hypermarka.com/res_ru/%@", [[self.Images objectAtIndex:i] valueForKey:@"name"]]];
+        }
+    }
+
+    self.Titles = [[SVC valueForKey:@"title"] objectAtIndex:0];
+    self.Prices = [[SVC valueForKey:@"price"] objectAtIndex:0];
+    self.CatTableView.rowHeight = 150;
     
 }
 
@@ -68,25 +91,29 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return [self.Titles count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"MyCell";
+    static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    MyCell *cell = (MyCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil] objectAtIndex:0];
-    }
-    cell.textLabel.text = @"123";
+        //если ячейка не найдена - создаем новую
+		NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+	}
+    
+    cell.name.text = [Titles objectAtIndex:indexPath.row];
+    NSURL *url = [NSURL URLWithString:[self.ImagesNames objectAtIndex:indexPath.row]];
+    cell.photo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+    cell.photo.contentMode = UIViewContentModeScaleAspectFit;
+    cell.Price.text = [[self.Prices objectAtIndex:indexPath.row] valueForKey:@"RUR"];
     
     return cell;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [indexPath row] * 5;
-}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -94,5 +121,10 @@
 }
 
 
+
+- (IBAction)BackButton:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+    [Singleton sharedMySingleton].close = YES;
+}
 
 @end

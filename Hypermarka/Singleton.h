@@ -25,6 +25,7 @@
 @property (nonatomic, retain)NSMutableArray *podsections2;
 @property (nonatomic, retain)NSMutableArray *names2;
 @property (nonatomic, retain)NSString *SelectedName;
+@property (nonatomic, retain)NSString *SelectedTitle;
 
 -(void)test;
 

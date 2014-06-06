@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
+#import "MyCell.h"
 
 @interface CatalogViewController : UIViewController
 
@@ -15,7 +16,9 @@
 @property (strong, nonatomic) NSMutableArray *Prices;
 @property (strong, nonatomic) NSMutableArray *Images;
 @property (strong, nonatomic) NSMutableArray *Shops;
+@property (strong, nonatomic) NSMutableArray *ImagesNames;
 @property (weak, nonatomic) IBOutlet UINavigationItem *NivigationTitle;
 @property (weak, nonatomic) IBOutlet UITableView *CatTableView;
+- (IBAction)BackButton:(id)sender;
 
 @end

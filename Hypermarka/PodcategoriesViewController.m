@@ -216,8 +216,11 @@
             {
                 if (isOpen) {
                     NSMutableArray *NamesList = [[Singleton sharedMySingleton].podsections2 valueForKey:@"name"];
+                    NSMutableArray *TitleList = [[Singleton sharedMySingleton].podsections2 valueForKey:@"title"];
                     NSString *SelectedString = [NSString stringWithString:[[NamesList objectAtIndex:indexPath.section]objectAtIndex:indexPath.row-1]];
+                    NSString *SelectedTitle = [NSString stringWithString:[[TitleList objectAtIndex:indexPath.section]objectAtIndex:indexPath.row-1]];
                     [Singleton sharedMySingleton].SelectedName =SelectedString;
+                    [Singleton sharedMySingleton].SelectedTitle = SelectedTitle;
                     UIStoryboard *storyboard = self.storyboard;
                     PodcategoriesViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"CatalogViewController"];
                     
