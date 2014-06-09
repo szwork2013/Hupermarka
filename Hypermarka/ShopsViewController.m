@@ -1,20 +1,20 @@
 //
-//  CatalogViewController.m
+//  ShopsViewController.m
 //  Hypermarka
 //
-//  Created by Bogdan Redkin on 04.06.14.
+//  Created by Bogdan Redkin on 09.06.14.
 //  Copyright (c) 2014 mifors. All rights reserved.
 //
 
-#import "CatalogViewController.h"
+#import "ShopsViewController.h"
 
-@interface CatalogViewController ()
+@interface ShopsViewController ()
 
 @end
 
-@implementation CatalogViewController
-
-@synthesize Shops, Prices, Titles, Images,  NivigationTitle, CatTableView, downloadImage;
+@implementation ShopsViewController
+@synthesize NavTitle;
+@synthesize Shops, Prices, Titles, Images, CatTableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,10 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  
-    NSString *StringUrl = [NSString stringWithFormat:@"http://work.hypermarka.com/hm/proto-showcase?shop=0&sort=price&section=stroy&subsection=%@&pg=all&theme=11", [Singleton sharedMySingleton].SelectedName];
-    NSURL *url = [NSURL URLWithString:StringUrl];
-    NSData *allCoursesData = [[NSData alloc] initWithContentsOfURL:url];
+    NavTitle.title = [Singleton sharedMySingleton].InfoTitle;  NSLog(@"Name: %@", [Singleton sharedMySingleton].SelectedName);
+    NSString *url = [NSString stringWithFormat:@"http://work.hypermarka.com/hm/proto-showcase?shop=0&sort=price&section=stroy&subsection=%@&pg=all&theme=11", [Singleton sharedMySingleton].SelectedName];
+    NSData *allCoursesData = [[NSData alloc] initWithContentsOfURL:
+                              [NSURL URLWithString:url]];
+    
     NSString *allData = [[NSString alloc] initWithData:allCoursesData encoding:NSUTF8StringEncoding];
     NSMutableString *mutableData = [NSMutableString stringWithString:allData];
     int c = 0;
@@ -45,7 +46,6 @@
         }
     }
     [mutableData insertString:@"}" atIndex:mutableData.length-2];
-    
     NSString *DataStr = [NSString stringWithString:mutableData];
     NSData *data = [DataStr dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error;
@@ -53,7 +53,6 @@
                                 JSONObjectWithData:data
                                 options:NSJSONReadingMutableContainers
                                 error:&error];
-    NivigationTitle.title = [Singleton sharedMySingleton].SelectedTitle;
     
     NSMutableArray *SVC = [DataDict valueForKey:@"svc"];
     if (!self.Titles) {
@@ -81,24 +80,6 @@
     self.Prices = [[SVC valueForKey:@"price"] objectAtIndex:0];
     self.CatTableView.rowHeight = 150;
     
-    Reachability *reachability = [Reachability reachabilityForInternetConnection];
-    [reachability startNotifier];
-    
-    NetworkStatus status = [reachability currentReachabilityStatus];
-    
-   if (status == ReachableViaWiFi)
-    {
-        downloadImage = YES;
-    }
-    else if (status == ReachableViaWWAN)
-    {
-        downloadImage = NO;
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                        message:@"Мобильное интернет соеденение.\n Картинки отображаться не будут, перейдите в информацию о товаре для просмотра."
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -114,39 +95,27 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
+    
     MyCell *cell = (MyCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (downloadImage) {
-        if (cell == nil) {
-            //если ячейка не найдена - создаем новую
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-        
-        cell.name.text = [Titles objectAtIndex:indexPath.row];
-        NSURL *url = [NSURL URLWithString:[self.ImagesNames objectAtIndex:indexPath.row]];
-        cell.photo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-        cell.photo.contentMode = UIViewContentModeScaleAspectFit;
-        cell.Price.text = [[self.Prices objectAtIndex:indexPath.row] valueForKey:@"RUR"];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
-    else {
-        if (cell == nil) {
-            //если ячейка не найдена - создаем новую
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyCell2" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-        
-        cell.name.text = [Titles objectAtIndex:indexPath.row];
-        cell.Price.text = [[self.Prices objectAtIndex:indexPath.row] valueForKey:@"RUR"];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
+    if (cell == nil) {
+        //если ячейка не найдена - создаем новую
+		NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+	}
+    
+    cell.name.text = [Titles objectAtIndex:indexPath.row];
+    NSURL *url = [NSURL URLWithString:[self.ImagesNames objectAtIndex:indexPath.row]];
+    cell.photo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+    cell.photo.contentMode = UIViewContentModeScaleAspectFit;
+    cell.Price.text = [[self.Prices objectAtIndex:indexPath.row] valueForKey:@"RUR"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    cell.backgroundColor = [UIColor whiteColor
+    //    cell.backgroundColor = [UIColor whiteColor
 }
 
 - (void)didReceiveMemoryWarning
@@ -161,5 +130,4 @@
     [self dismissModalViewControllerAnimated:YES];
     [Singleton sharedMySingleton].close = YES;
 }
-
 @end

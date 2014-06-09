@@ -26,6 +26,8 @@
 @property (nonatomic, retain)NSMutableArray *names2;
 @property (nonatomic, retain)NSString *SelectedName;
 @property (nonatomic, retain)NSString *SelectedTitle;
+@property (nonatomic, retain)NSString *ShopId;
+@property (nonatomic, retain)NSString *InfoTitle;
 
 -(void)test;
 

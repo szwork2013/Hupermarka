@@ -50,6 +50,15 @@
 		A559B6F419409062001C30F5 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A559B6F219409062001C30F5 /* MyCell.xib */; };
 		A5895DA4193F0EA100411B15 /* PodcategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5895DA3193F0EA100411B15 /* PodcategoriesViewController.m */; };
 		A5895DA7193F0ECC00411B15 /* CatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5895DA6193F0ECC00411B15 /* CatalogViewController.m */; };
+		A599F8C21941C7A40046A88A /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A599F8C11941C7A40046A88A /* InfoViewController.m */; };
+		A599F91A1941CC5A0046A88A /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A599F9191941CC5A0046A88A /* libxml2.2.dylib */; };
+		A599F91C1941CD440046A88A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A599F91B1941CD440046A88A /* libxml2.dylib */; };
+		A599F91E1941D1FE0046A88A /* SelectionImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A599F91D1941D1FE0046A88A /* SelectionImage.png */; };
+		A5A1736519458C6B0063CD2A /* ShopsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1736419458C6B0063CD2A /* ShopsViewController.m */; };
+		A5A173681945C7370063CD2A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A173671945C7370063CD2A /* Reachability.m */; };
+		A5A1736D1945CE5F0063CD2A /* MyCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1736B1945CE5F0063CD2A /* MyCell2.m */; };
+		A5A1736E1945CE5F0063CD2A /* MyCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5A1736C1945CE5F0063CD2A /* MyCell2.xib */; };
+		A5A173701945CFD90063CD2A /* Hypermarka3.gif in Resources */ = {isa = PBXBuildFile; fileRef = A5A1736F1945CFD90063CD2A /* Hypermarka3.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +136,19 @@
 		A5895DA3193F0EA100411B15 /* PodcategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PodcategoriesViewController.m; sourceTree = "<group>"; };
 		A5895DA5193F0ECC00411B15 /* CatalogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogViewController.h; sourceTree = "<group>"; };
 		A5895DA6193F0ECC00411B15 /* CatalogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogViewController.m; sourceTree = "<group>"; };
+		A599F8C01941C7A40046A88A /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		A599F8C11941C7A40046A88A /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		A599F9191941CC5A0046A88A /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		A599F91B1941CD440046A88A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		A599F91D1941D1FE0046A88A /* SelectionImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SelectionImage.png; sourceTree = "<group>"; };
+		A5A1736319458C6B0063CD2A /* ShopsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopsViewController.h; sourceTree = "<group>"; };
+		A5A1736419458C6B0063CD2A /* ShopsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopsViewController.m; sourceTree = "<group>"; };
+		A5A173661945C7370063CD2A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		A5A173671945C7370063CD2A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		A5A1736A1945CE5F0063CD2A /* MyCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell2.h; sourceTree = "<group>"; };
+		A5A1736B1945CE5F0063CD2A /* MyCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell2.m; sourceTree = "<group>"; };
+		A5A1736C1945CE5F0063CD2A /* MyCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCell2.xib; sourceTree = "<group>"; };
+		A5A1736F1945CFD90063CD2A /* Hypermarka3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Hypermarka3.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +156,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A599F91C1941CD440046A88A /* libxml2.dylib in Frameworks */,
+				A599F91A1941CC5A0046A88A /* libxml2.2.dylib in Frameworks */,
 				439152F71920F8040059CFC5 /* CoreGraphics.framework in Frameworks */,
 				439152F91920F8040059CFC5 /* UIKit.framework in Frameworks */,
 				439152F51920F8040059CFC5 /* Foundation.framework in Frameworks */,
@@ -224,6 +248,8 @@
 		439152F31920F8040059CFC5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A599F91B1941CD440046A88A /* libxml2.dylib */,
+				A599F9191941CC5A0046A88A /* libxml2.2.dylib */,
 				439152F41920F8040059CFC5 /* Foundation.framework */,
 				439152F61920F8040059CFC5 /* CoreGraphics.framework */,
 				439152F81920F8040059CFC5 /* UIKit.framework */,
@@ -235,26 +261,34 @@
 		439152FA1920F8040059CFC5 /* Hypermarka */ = {
 			isa = PBXGroup;
 			children = (
+				A5A173691945C7410063CD2A /* Reachabillty */,
 				436C99AD193CC161003CBF03 /* Singleton */,
 				439153061920F8040059CFC5 /* Main_iPhone.storyboard */,
 				439153091920F8040059CFC5 /* Main_iPad.storyboard */,
+				4391532C1920F84F0059CFC5 /* StartViewController.h */,
+				4391532D1920F84F0059CFC5 /* StartViewController.m */,
 				439153041920F8040059CFC5 /* AppDelegate.m */,
 				439153031920F8040059CFC5 /* AppDelegate.h */,
 				A5895DA2193F0EA100411B15 /* PodcategoriesViewController.h */,
 				A5895DA3193F0EA100411B15 /* PodcategoriesViewController.m */,
 				A5895DA5193F0ECC00411B15 /* CatalogViewController.h */,
 				A5895DA6193F0ECC00411B15 /* CatalogViewController.m */,
+				A5A1736A1945CE5F0063CD2A /* MyCell2.h */,
+				A5A1736B1945CE5F0063CD2A /* MyCell2.m */,
+				A5A1736C1945CE5F0063CD2A /* MyCell2.xib */,
 				A559B6F019409062001C30F5 /* MyCell.h */,
 				A559B6F119409062001C30F5 /* MyCell.m */,
 				A559B6F219409062001C30F5 /* MyCell.xib */,
-				4391532C1920F84F0059CFC5 /* StartViewController.h */,
-				4391532D1920F84F0059CFC5 /* StartViewController.m */,
-				4391530C1920F8040059CFC5 /* ViewController.h */,
-				4391530D1920F8040059CFC5 /* ViewController.m */,
+				A599F8C01941C7A40046A88A /* InfoViewController.h */,
+				A599F8C11941C7A40046A88A /* InfoViewController.m */,
 				436C99AE193CC1A8003CBF03 /* MapViewController.h */,
 				436C99AF193CC1A8003CBF03 /* MapViewController.m */,
 				436C99A8193CC10D003CBF03 /* Кластер */,
 				436C99A9193CC11C003CBF03 /* Аннотации */,
+				A5A1736319458C6B0063CD2A /* ShopsViewController.h */,
+				A5A1736419458C6B0063CD2A /* ShopsViewController.m */,
+				4391530C1920F8040059CFC5 /* ViewController.h */,
+				4391530D1920F8040059CFC5 /* ViewController.m */,
 				4320F8B51926744E0046998B /* TableViewController.h */,
 				4320F8B61926744E0046998B /* TableViewController.m */,
 				4320F8C2192674870046998B /* Cells */,
@@ -267,6 +301,8 @@
 		439152FB1920F8040059CFC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A5A1736F1945CFD90063CD2A /* Hypermarka3.gif */,
+				A599F91D1941D1FE0046A88A /* SelectionImage.png */,
 				436C99B1193CC1BE003CBF03 /* cluster1.png */,
 				436C99B2193CC1BE003CBF03 /* cluster1@2x.png */,
 				436C99B3193CC1BE003CBF03 /* pinpoint1.png */,
@@ -301,6 +337,15 @@
 				4391531F1920F8040059CFC5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A5A173691945C7410063CD2A /* Reachabillty */ = {
+			isa = PBXGroup;
+			children = (
+				A5A173661945C7370063CD2A /* Reachability.h */,
+				A5A173671945C7370063CD2A /* Reachability.m */,
+			);
+			name = Reachabillty;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,10 +434,13 @@
 				4320F8CA192675AF0046998B /* UpAccessory@2x.png in Resources */,
 				4320F8C8192675AF0046998B /* DownAccessory@2x.png in Resources */,
 				439153081920F8040059CFC5 /* Main_iPhone.storyboard in Resources */,
+				A5A173701945CFD90063CD2A /* Hypermarka3.gif in Resources */,
 				4320F8C7192675AF0046998B /* DownAccessory.png in Resources */,
 				436C99B7193CC1BE003CBF03 /* pinpoint1.png in Resources */,
+				A599F91E1941D1FE0046A88A /* SelectionImage.png in Resources */,
 				4320F8C1192674570046998B /* Cell2.xib in Resources */,
 				4395825719252DC700BB086E /* ExpansionTableTestData2.plist in Resources */,
+				A5A1736E1945CE5F0063CD2A /* MyCell2.xib in Resources */,
 				4320F8BF192674570046998B /* Cell1.xib in Resources */,
 				439152FF1920F8040059CFC5 /* InfoPlist.strings in Resources */,
 				436C99B8193CC1BE003CBF03 /* pinpoint1@2x.png in Resources */,
@@ -414,17 +462,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A1736519458C6B0063CD2A /* ShopsViewController.m in Sources */,
 				4391530E1920F8040059CFC5 /* ViewController.m in Sources */,
 				436C99A2193CC0F9003CBF03 /* REVClusterManager.m in Sources */,
 				A5895DA7193F0ECC00411B15 /* CatalogViewController.m in Sources */,
 				436C99A7193CC105003CBF03 /* REVClusterAnnotationView.m in Sources */,
 				4391532E1920F84F0059CFC5 /* StartViewController.m in Sources */,
+				A5A1736D1945CE5F0063CD2A /* MyCell2.m in Sources */,
 				A559B6F319409062001C30F5 /* MyCell.m in Sources */,
 				439153051920F8040059CFC5 /* AppDelegate.m in Sources */,
 				436C99A0193CC0F9003CBF03 /* REVAnnotationsCollection.m in Sources */,
 				4320F8BE192674570046998B /* Cell1.m in Sources */,
+				A5A173681945C7370063CD2A /* Reachability.m in Sources */,
 				436C99A1193CC0F9003CBF03 /* REVClusterBlock.m in Sources */,
 				436C99AC193CC155003CBF03 /* Singleton.m in Sources */,
+				A599F8C21941C7A40046A88A /* InfoViewController.m in Sources */,
 				4320F8B71926744E0046998B /* TableViewController.m in Sources */,
 				A5895DA4193F0EA100411B15 /* PodcategoriesViewController.m in Sources */,
 				439153011920F8040059CFC5 /* main.m in Sources */,

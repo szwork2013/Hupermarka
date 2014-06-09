@@ -61,25 +61,30 @@
     else {
         NSLog(@"Ориентация неопределена");
     }
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
 
-    NSData *allCoursesData = [[NSData alloc] initWithContentsOfURL:
-                              [NSURL URLWithString:@"http://work.hypermarka.com/hm/proto/secview?obj=0"]];
+    NSURL *url = [NSURL URLWithString:@"http://work.hypermarka.com/hm/proto/secview?obj=0"];
+    NSOperation *DownloadOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(DownloadAndParse:) object:url];
     
+    [queue addOperation:DownloadOperation];
+}
+-(void)DownloadAndParse:(NSURL *)url{
+    NSData *allCoursesData = [[NSData alloc] initWithContentsOfURL:url];
     NSString *allData = [[NSString alloc] initWithData:allCoursesData encoding:NSUTF8StringEncoding];
-//    парсинг оных
+    //    парсинг оных
     NSMutableString *mutableData = [NSMutableString stringWithString:allData];
     
     [mutableData replaceCharactersInRange:NSMakeRange(0, 1) withString:@"{"];
     int a = [mutableData length]-2;
-   [mutableData replaceCharactersInRange:NSMakeRange(a, 1) withString:@"}"];
+    [mutableData replaceCharactersInRange:NSMakeRange(a, 1) withString:@"}"];
     NSString *DataStr = [NSString stringWithString:mutableData];
     NSData *data = [DataStr dataUsingEncoding:NSUTF8StringEncoding];
     
     NSError *error;
     NSMutableDictionary *DataDict = [NSJSONSerialization
-                                       JSONObjectWithData:data
-                                       options:NSJSONReadingMutableContainers
-                                       error:&error];
+                                     JSONObjectWithData:data
+                                     options:NSJSONReadingMutableContainers
+                                     error:&error];
     
     NSMutableArray *AllSection = [DataDict objectForKey:@"section"];
     NSMutableArray *Titles = [NSMutableArray array];
@@ -106,6 +111,8 @@
     [Singleton sharedMySingleton].podsections2 = list2;
     [Singleton sharedMySingleton].names2 = names2;
 }
+
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations

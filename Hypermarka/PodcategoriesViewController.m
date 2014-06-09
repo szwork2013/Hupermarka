@@ -44,7 +44,6 @@
 - (void)viewDidAppear:(BOOL)animated{
     self.TitleNavigation.title = [Singleton sharedMySingleton].TextLabelCell;
     if ([self.TitleNavigation.title  isEqual: @"Стройка и ремонт"]) {
-        NSLog(@"ALLRIGHT");
     }
     else{
         NSLog(@"self.Tite = %@", self.TitleNavigation.title);

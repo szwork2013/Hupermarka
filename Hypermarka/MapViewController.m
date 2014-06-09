@@ -26,7 +26,7 @@
 @implementation MapViewController
 
 
-
+@synthesize AnnTitles, IDS, OriginalTitles;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -94,7 +94,9 @@
     }
     if ([[Singleton sharedMySingleton].names count]==0) {
         [namez appendString:@"proektarhitektura;zemelnieraboti;perekritiya;krovlyavodostok;fasad;ozelenenylandshaft;prochee;dizain;lakikraskiklei;napolnyepokritiya;stenovyepokritiya;potolki;oknadveri;elektrika;santehnika;lodjiibalkoni;prochee;lakikraskiklei;kirpichbetonjbi;sypuchyematerialy;pilomaterialy;metalloprodukciya;plastikovyetruby;uteplenyeizolyaciya;peregorodkigipsokarton;metizykrepej;prochee;garaji;bani;teplicy;besedki;kaminymangaly;baseyny;zabopyvorota;prochee;septikikanalizaciya;gaz;elektrichestvo;vodateplo;ventilyaciyakondicionirovanie;svyaztvinternet;ohrana;umnyidom;electroinstrument;pnevmoinstrument;benzoinstrument;slesarnomontajnyinstrument;izmeritelnayatehnika;sadovayatehnikainstrument;svarka;organizacii;specialisty;brigady;rabochie;masternavseruki;prochee;ofch"];
+        first = YES;
     }
+    
     // создаем запрос
     NSString *url = [NSString stringWithFormat:@"http://work.hypermarka.com/hm/svc-shoplist?list=%@&swlat=56.4922648749152&swlng=52.202664648437505&nelat=57.24433849873821&nelng=54.2351353515625", namez];
     NSLog(@"%@", url);
@@ -112,6 +114,12 @@
     } else {
         // при попытке соединиться произошла ошибка
         NSLog(@"Connection error!");
+    }
+    if (!AnnTitles) {
+        AnnTitles = [NSMutableArray array];
+    }
+    if (!OriginalTitles) {
+        OriginalTitles = [NSMutableArray array];
     }
 }
 
@@ -179,6 +187,7 @@
                                                  reuseIdentifier:@"cluster"];
         
         annView.image = [UIImage imageNamed:@"cluster1.png"];
+        annView.canShowCallout = YES;
         
         [(REVClusterAnnotationView*)annView setClusterText:
          [NSString stringWithFormat:@"%i",[pin nodeCount]]];
@@ -192,6 +201,7 @@
                                                    reuseIdentifier:@"pin"];
         
         annView.image = [UIImage imageNamed:@"pinpoint1.png"];
+        annView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeInfoDark];
         annView.canShowCallout = YES;
         
         annView.calloutOffset = CGPointMake(-6.0, 0.0);
@@ -200,6 +210,7 @@
     
     
 }
+
 
 
 - (IBAction)segmentedControl:(UISegmentedControl*)sender {
@@ -213,14 +224,15 @@
 }
 
 - (IBAction)CloseModals:(id)sender
-{
-    if (![Singleton sharedMySingleton].names) {
+{   NSLog(@"Bool value: %hhd", first);
+    if (first) {
         UIStoryboard *storyboard = self.storyboard;
         MapViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"TableViewController"];
         
         [self presentViewController:finished animated:YES completion:NULL];
     }
     else{
+        NSLog(@"Names: %@", [Singleton sharedMySingleton].names);
         [self dismissModalViewControllerAnimated:YES];
         [Singleton sharedMySingleton].close = YES;
     }
@@ -259,14 +271,16 @@
     NSArray *addresses = [metka valueForKey:@"address"];
     NSArray *lat = [metka valueForKey:@"lat"];
     NSArray *lon = [metka valueForKey:@"lon"];
-    NSArray *names = [metka valueForKey:@"name"];
+    OriginalTitles = [metka valueForKey:@"name"];
     NSArray *worktime = [metka valueForKey:@"worktime"];
-    long Ncount = [names count];
+    IDS = [metka valueForKey:@"shop_id"];
+    long Ncount = [OriginalTitles count];
     NSMutableArray *pins = [NSMutableArray array];
 
     
     for (int i = 0; i<Ncount; i++) {
-        NSString *titles =[NSString stringWithFormat:@"%@ (%@)", [addresses objectAtIndex:i], [names objectAtIndex:i]];
+        NSString *titles =[NSString stringWithFormat:@"%@ (%@)", [addresses objectAtIndex:i], [OriginalTitles objectAtIndex:i]];
+        [AnnTitles addObject:titles];
         NSString *subtitles = [NSString stringWithFormat:@"Режим работы: %@", [worktime objectAtIndex:i]];
         CGFloat X = [[lat objectAtIndex:i] floatValue];
         CGFloat Y = [[lon objectAtIndex:i] floatValue];
@@ -288,7 +302,6 @@
 - (void)mapView:(MKMapView *)mapView
 didSelectAnnotationView:(MKAnnotationView *)view
 {
-    NSLog(@"REVMapViewController mapView didSelectAnnotationView:");
     
     if (![view isKindOfClass:[REVClusterAnnotationView class]])
         return;
@@ -299,10 +312,24 @@ didSelectAnnotationView:(MKAnnotationView *)view
     MKCoordinateSpanMake(mapView.region.span.latitudeDelta/2.0,
                          mapView.region.span.longitudeDelta/2.0);
     
-    //mapView.region = MKCoordinateRegionMake(centerCoordinate, newSpan);
     
     [mapView setRegion:MKCoordinateRegionMake(centerCoordinate, newSpan)
               animated:YES];
+}
+
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+    REVClusterAnnotationView *annotationTapped = (REVClusterAnnotationView *)view.annotation;
+    for (int i = 0; i<[AnnTitles count]; i++) {
+        NSLog(@"i = %i", i);
+        if ([[AnnTitles objectAtIndex:i] isEqualToString:annotationTapped.title]) {
+            [Singleton sharedMySingleton].ShopId = [IDS objectAtIndex:i];
+            [Singleton sharedMySingleton].InfoTitle = [OriginalTitles objectAtIndex:i];
+            UIStoryboard *storyboard = self.storyboard;
+            MapViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"ShopsViewController"];
+            
+            [self presentViewController:finished animated:YES completion:NULL];
+        }
+    }
 }
 
 -(void)viewDidUnload{

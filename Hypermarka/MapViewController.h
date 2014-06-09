@@ -13,11 +13,15 @@
 @interface MapViewController : UIViewController <MKMapViewDelegate >{
     NSMutableData *receivedData;
     REVClusterMapView *_mapView;
+    BOOL first;
     int height;
     int width;
 }
 
 @property (strong, nonatomic) IBOutlet UIView *view2;
+@property (strong, nonatomic) NSMutableArray *AnnTitles;
+@property (strong, nonatomic) NSMutableArray *OriginalTitles;
+@property (strong, nonatomic) NSMutableArray *IDS;
 
 - (IBAction)segmentedControl:(UISegmentedControl*)sender;
 - (IBAction)CloseModals:(id)sender;

@@ -141,9 +141,15 @@
     if (self.isOpen&&self.selectIndex.section == indexPath.section&&indexPath.row!=0) {
         static NSString *CellIdentifier = @"Cell2";
         Cell2 *cell = (Cell2*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryNone;
+//        NSLog(@"%@", indexPath);
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil] objectAtIndex:0];
+        }
+        if ([[Singleton sharedMySingleton].SelectedIndexes containsObject:indexPath]) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+        else{
+            cell.accessoryType = UITableViewCellAccessoryNone;
         }
         
         NSMutableArray *TitleList = [[Singleton sharedMySingleton].podsections valueForKey:@"title"];
@@ -280,4 +286,8 @@
 
 
 
+- (IBAction)BackButton:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+    [Singleton sharedMySingleton].close = YES;
+}
 @end

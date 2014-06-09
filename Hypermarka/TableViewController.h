@@ -16,5 +16,6 @@
 @property (strong,nonatomic) UITableViewCell *CellIndexPathes;
 @property (strong,nonatomic) NSMutableArray *lists;
 @property (strong,nonatomic) NSMutableArray *tableData;
+- (IBAction)BackButton:(id)sender;
 
 @end

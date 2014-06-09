@@ -156,6 +156,58 @@
             </objects>
             <point key="canvasLocation" x="766" y="587"/>
         </scene>
+        <!--Shops View Controller-->
+        <scene sceneID="zsH-sO-EBZ">
+            <objects>
+                <viewController storyboardIdentifier="ShopsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gMF-SS-ZAw" customClass="ShopsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qxv-pI-wI4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="6Hz-XZ-5wK">
+                                <rect key="frame" x="0.0" y="14" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="Skq-aC-5uz">
+                                        <barButtonItem key="leftBarButtonItem" title="Назад" id="j58-9R-azg">
+                                            <connections>
+                                                <action selector="BackButton:" destination="gMF-SS-ZAw" id="ZUI-bq-5QK"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HAa-y3-tW8">
+                                <rect key="frame" x="-7" y="58" width="327" height="422"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="CatTableView" destination="HAa-y3-tW8" id="s81-jY-fQ3"/>
+                        <outlet property="NavTitle" destination="Skq-aC-5uz" id="ZVy-j6-1S7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cPQ-9v-W6Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1113" y="22"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="547-Qc-XFT">
+            <objects>
+                <viewController storyboardIdentifier="InfoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UOV-hW-xzw" customClass="InfoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qZb-06-C9u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A8d-HO-xep" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1113" y="587"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="Vsx-OW-fLO">
             <objects>
@@ -202,24 +254,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="03J-BV-m7Z">
-                                <rect key="frame" x="16" y="20" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Фильтр">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="CloseModals:" destination="Njy-WV-SdI" eventType="touchUpInside" id="IPx-za-EAc"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" id="Vap-YB-M3u">
                                 <rect key="frame" x="0.0" y="58" width="320" height="510"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <navigationBar contentMode="scaleToFill" id="2TX-Z7-4PL">
+                                <rect key="frame" x="0.0" y="14" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Магазины на карте" id="pzF-7M-SAp">
+                                        <barButtonItem key="leftBarButtonItem" title="Фильтр" id="GO9-3X-vE5">
+                                            <connections>
+                                                <action selector="CloseModals:" destination="Njy-WV-SdI" id="ylX-3A-aK9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="view2" destination="Vap-YB-M3u" id="hDZ-Ik-0tg"/>
                     </connections>
@@ -249,7 +306,13 @@
                                 <rect key="frame" x="0.0" y="13" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Выберите категорию" id="xYg-su-atX"/>
+                                    <navigationItem title="Выберите категорию" id="xYg-su-atX">
+                                        <barButtonItem key="leftBarButtonItem" title="Назад" id="38p-eq-gWf">
+                                            <connections>
+                                                <action selector="BackButton:" destination="Win-dz-Unz" id="deL-n1-IM2"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
