@@ -31,35 +31,28 @@
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     UIDeviceOrientation orientation1 = [[UIDevice currentDevice] orientation];
     [Singleton sharedMySingleton].orientation = orientation1;
-    
-    NSLog(@"WORKED");
+    [Singleton sharedMySingleton].FilterOpen = NO;
+
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    NSLog(@"Height = %f, width = %f", screenBounds.size.height, screenBounds.size.width);
     if ([Singleton sharedMySingleton].width == 0) {
         if (orientation1 == UIDeviceOrientationLandscapeLeft) {
-            NSLog(@"Кнопка Home справа (Альбомная ориентация) высоту и ширину надо поменять");
             [Singleton sharedMySingleton].height = screenBounds.size.width;
             [Singleton sharedMySingleton].width = screenBounds.size.height;
         }else if (orientation1 == UIDeviceOrientationLandscapeRight){
-            NSLog(@"Кнопка Home слева (Альбомная ориентация) высоту и ширину надо поменять");
             [Singleton sharedMySingleton].height = screenBounds.size.width;
             [Singleton sharedMySingleton].width = screenBounds.size.height;
         }else if (orientation1 == UIDeviceOrientationPortrait){
-            NSLog(@"Кнопка Home снизу (Портретная ориенация) высоту и ширину менять не надо");
             [Singleton sharedMySingleton].height = screenBounds.size.height;
             [Singleton sharedMySingleton].width = screenBounds.size.width;
         }else if (orientation1 == UIDeviceOrientationPortraitUpsideDown){
-            NSLog(@"Кнопка Home сверху (Портретная ориенация) высоту и ширину менять не надо");
             [Singleton sharedMySingleton].height = screenBounds.size.height;
             [Singleton sharedMySingleton].width = screenBounds.size.width;
         }else{
-            NSLog(@"неопределена ориентация");
             [Singleton sharedMySingleton].height = screenBounds.size.height;
             [Singleton sharedMySingleton].width = screenBounds.size.width;}
         
     }
     else {
-        NSLog(@"Ориентация неопределена");
     }
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
 
@@ -67,6 +60,16 @@
     NSOperation *DownloadOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(DownloadAndParse:) object:url];
     
     [queue addOperation:DownloadOperation];
+    
+    UIBarButtonItem *buttonizeButton = [[UIBarButtonItem alloc] initWithTitle:@"Buttonize"
+                                                                        style:UIBarButtonItemStyleDone
+                                                                       target:self
+                                                                       action:@selector(buttonizeButtonTap:)];
+    self.navigationItem.rightBarButtonItems = @[buttonizeButton];
+
+}
+-(void)buttonizeButtonTap:(id)sender{
+    [self performSegueWithIdentifier:@"Associate" sender:sender];
 }
 -(void)DownloadAndParse:(NSURL *)url{
     NSData *allCoursesData = [[NSData alloc] initWithContentsOfURL:url];
@@ -130,26 +133,24 @@
     
     
     if (orientation1 == UIDeviceOrientationLandscapeLeft) {
-        NSLog(@"Кнопка Home справа (Альбомная ориентация) высоту и ширину надо поменять");
         [Singleton sharedMySingleton].height = screenBounds.size.width;
         [Singleton sharedMySingleton].width = screenBounds.size.height;
     }else if (orientation1 == UIDeviceOrientationLandscapeRight){
-        NSLog(@"Кнопка Home слева (Альбомная ориентация) высоту и ширину надо поменять");
         [Singleton sharedMySingleton].height = screenBounds.size.width;
         [Singleton sharedMySingleton].width = screenBounds.size.height;
     }else if (orientation1 == UIDeviceOrientationPortrait){
-        NSLog(@"Кнопка Home снизу (Портретная ориенация) высоту и ширину менять не надо");
         [Singleton sharedMySingleton].height = screenBounds.size.height;
         [Singleton sharedMySingleton].width = screenBounds.size.width;
     }else if (orientation1 == UIDeviceOrientationPortraitUpsideDown){
-        NSLog(@"Кнопка Home сверху (Портретная ориенация) высоту и ширину менять не надо");
         [Singleton sharedMySingleton].height = screenBounds.size.height;
         [Singleton sharedMySingleton].width = screenBounds.size.width;
     }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    
+    UIStoryboard *storyboard = self.storyboard;
+    StartViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"CategoriesViewController"];
+    [self presentViewController:finished animated:YES completion:NULL];
 }
 - (void)didReceiveMemoryWarning
 {

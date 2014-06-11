@@ -25,5 +25,6 @@
 
 - (IBAction)segmentedControl:(UISegmentedControl*)sender;
 - (IBAction)CloseModals:(id)sender;
+- (IBAction)BackButton:(id)sender;
 
 @end

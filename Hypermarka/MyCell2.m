@@ -12,7 +12,7 @@
 
 @synthesize name;
 @synthesize photo;
-@synthesize Shop;
 @synthesize Price;
+@synthesize Shop;
 
 @end

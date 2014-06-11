@@ -14,7 +14,7 @@
 
 @implementation CatalogViewController
 
-@synthesize Shops, Prices, Titles, Images,  NivigationTitle, CatTableView, downloadImage;
+@synthesize Shops, Prices, Titles, Images,  NivigationTitle, CatTableView, downloadImage, info;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,8 +28,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  
-    NSString *StringUrl = [NSString stringWithFormat:@"http://work.hypermarka.com/hm/proto-showcase?shop=0&sort=price&section=stroy&subsection=%@&pg=all&theme=11", [Singleton sharedMySingleton].SelectedName];
+    NSString *StringUrl = [NSString string];
+    if ([Singleton sharedMySingleton].AfterMap) {
+    StringUrl = [NSString stringWithFormat:@"http://work.hypermarka.com/hm/proto-showcase?shop=%@&sort=price&section=stroy&subsection=%@&pg=all&theme=11",[Singleton sharedMySingleton].ShopId, [Singleton sharedMySingleton].SelectedName];
+    }
+    else{
+    StringUrl = [NSString stringWithFormat:@"http://work.hypermarka.com/hm/proto-showcase?shop=0&sort=price&section=stroy&subsection=%@&pg=all&theme=11", [Singleton sharedMySingleton].SelectedName];
+    }
     NSURL *url = [NSURL URLWithString:StringUrl];
     NSData *allCoursesData = [[NSData alloc] initWithContentsOfURL:url];
     NSString *allData = [[NSString alloc] initWithData:allCoursesData encoding:NSUTF8StringEncoding];
@@ -54,7 +59,6 @@
                                 options:NSJSONReadingMutableContainers
                                 error:&error];
     NivigationTitle.title = [Singleton sharedMySingleton].SelectedTitle;
-    
     NSMutableArray *SVC = [DataDict valueForKey:@"svc"];
     if (!self.Titles) {
         self.Titles = [NSMutableArray array];
@@ -65,7 +69,12 @@
     if (!self.ImagesNames) {
         self.ImagesNames = [NSMutableArray array];
     }
-    
+    if (!self.info) {
+        self.info = [NSMutableArray array];
+    }
+    if (![Singleton sharedMySingleton].info2) {
+        [Singleton sharedMySingleton].info2 = [NSMutableDictionary dictionary];
+    }
     self.Images = [[SVC valueForKey:@"image"] objectAtIndex:0];
     for (int i = 0; i<[self.Images count]; i++) {
         
@@ -76,9 +85,10 @@
             [self.ImagesNames addObject:[NSString stringWithFormat:@"http://work.hypermarka.com/res_ru/%@", [[self.Images objectAtIndex:i] valueForKey:@"name"]]];
         }
     }
-    
     self.Titles = [[SVC valueForKey:@"title"] objectAtIndex:0];
     self.Prices = [[SVC valueForKey:@"price"] objectAtIndex:0];
+    self.info = [SVC valueForKey:@"short_descr"];
+    NSLog(@"TEST INFO : %@", self.info);
     self.CatTableView.rowHeight = 150;
     
     Reachability *reachability = [Reachability reachabilityForInternetConnection];
@@ -98,6 +108,7 @@
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
+        [alert show];
     }
 }
 
@@ -127,7 +138,9 @@
         cell.photo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
         cell.photo.contentMode = UIViewContentModeScaleAspectFit;
         cell.Price.text = [[self.Prices objectAtIndex:indexPath.row] valueForKey:@"RUR"];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.Shop.text = [Singleton sharedMySingleton].InfoTitle;
+        if ([Singleton sharedMySingleton].InfoClosed) {
+        }
     }
     else {
         if (cell == nil) {
@@ -138,15 +151,21 @@
         
         cell.name.text = [Titles objectAtIndex:indexPath.row];
         cell.Price.text = [[self.Prices objectAtIndex:indexPath.row] valueForKey:@"RUR"];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.Shop.text = [Singleton sharedMySingleton].InfoTitle;
     }
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    cell.backgroundColor = [UIColor whiteColor
+    [Singleton sharedMySingleton].TitleForInfo = [Titles objectAtIndex:indexPath.row];
+    if ([self.info count]>indexPath.row) {
+        [Singleton sharedMySingleton].info2 = [self.info objectAtIndex:indexPath.row];
+    }
+    UIStoryboard *storyboard = self.storyboard;
+    CatalogViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"InfoViewController"];
+    [self presentViewController:finished animated:YES completion:NULL];
+
 }
 
 - (void)didReceiveMemoryWarning

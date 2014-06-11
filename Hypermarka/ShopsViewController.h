@@ -11,15 +11,7 @@
 #import "MyCell.h"
 
 @interface ShopsViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UINavigationItem *NavTitle;
 - (IBAction)BackButton:(id)sender;
-
-@property (retain, nonatomic) NSMutableArray *Titles;
-@property (strong, nonatomic) NSMutableArray *Prices;
-@property (strong, nonatomic) NSMutableArray *Images;
-@property (strong, nonatomic) NSMutableArray *Shops;
-@property (strong, nonatomic) NSMutableArray *ImagesNames;
-@property (weak, nonatomic) IBOutlet UITableView *CatTableView;
 
 
 @end

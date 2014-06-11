@@ -47,6 +47,7 @@
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     UIDeviceOrientation orientation1 = [[UIDevice currentDevice] orientation];
     [Singleton sharedMySingleton].orientation = orientation1;
+    [Singleton sharedMySingleton].FilterOpen = YES;
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     NSLog(@"Height = %f, width = %f", screenBounds.size.height, screenBounds.size.width);
@@ -76,9 +77,6 @@
     else {
         NSLog(@"Ориентация неопределена");
     }
-    NSLog(@"TableViewController");
-    NSString *path  = [[NSBundle mainBundle] pathForResource:@"ExpansionTableTestData2" ofType:@"plist"];
-    _dataList = [[NSMutableArray alloc] initWithContentsOfFile:path];
     
     self.expansionTableView.sectionFooterHeight = 0;
     self.expansionTableView.sectionHeaderHeight = 0;
@@ -288,6 +286,6 @@
 
 - (IBAction)BackButton:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
-    [Singleton sharedMySingleton].close = YES;
+    [Singleton sharedMySingleton].FilterOpen = NO;
 }
 @end

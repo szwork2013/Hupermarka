@@ -28,6 +28,11 @@
 @property (nonatomic, retain)NSString *SelectedTitle;
 @property (nonatomic, retain)NSString *ShopId;
 @property (nonatomic, retain)NSString *InfoTitle;
+@property (nonatomic, retain)NSArray *info2;
+@property (nonatomic) BOOL AfterMap;
+@property (nonatomic, retain)NSString *TitleForInfo;
+@property (nonatomic) BOOL InfoClosed;
+@property (nonatomic) BOOL FilterOpen;
 
 -(void)test;
 

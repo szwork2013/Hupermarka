@@ -224,18 +224,20 @@
 }
 
 - (IBAction)CloseModals:(id)sender
-{   NSLog(@"Bool value: %hhd", first);
-    if (first) {
+{
+    if (![Singleton sharedMySingleton].FilterOpen) {
         UIStoryboard *storyboard = self.storyboard;
         MapViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"TableViewController"];
-        
+        [Singleton sharedMySingleton].FilterOpen = YES;
         [self presentViewController:finished animated:YES completion:NULL];
     }
     else{
-        NSLog(@"Names: %@", [Singleton sharedMySingleton].names);
-        [self dismissModalViewControllerAnimated:YES];
-        [Singleton sharedMySingleton].close = YES;
+      [self dismissModalViewControllerAnimated:YES];
     }
+}
+
+- (IBAction)BackButton:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -325,9 +327,9 @@ didSelectAnnotationView:(MKAnnotationView *)view
             [Singleton sharedMySingleton].ShopId = [IDS objectAtIndex:i];
             [Singleton sharedMySingleton].InfoTitle = [OriginalTitles objectAtIndex:i];
             UIStoryboard *storyboard = self.storyboard;
-            MapViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"ShopsViewController"];
-            
+            MapViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"CategoriesViewController"];
             [self presentViewController:finished animated:YES completion:NULL];
+            [Singleton sharedMySingleton].AfterMap = YES;
         }
     }
 }

@@ -1,19 +1,18 @@
 //
-//  InfoViewController.m
+//  ArendaViewController.m
 //  Hypermarka
 //
-//  Created by Bogdan Redkin on 06.06.14.
+//  Created by Bogdan Redkin on 11.06.14.
 //  Copyright (c) 2014 mifors. All rights reserved.
 //
 
-#import "InfoViewController.h"
+#import "ArendaViewController.h"
 
-@interface InfoViewController ()
+@interface ArendaViewController ()
 
 @end
 
-@implementation InfoViewController
-@synthesize NavigationTitle;
+@implementation ArendaViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,11 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NavigationTitle.title = [Singleton sharedMySingleton].TitleForInfo;
-    [Singleton sharedMySingleton].InfoClosed = NO;
-    NSString *htmlString = [[Singleton sharedMySingleton].info2 objectAtIndex:0];
-    [htmlString stringByDecodingXMLEntities];
-    NSLog(@"Info: %@", htmlString);
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,11 +46,7 @@
 }
 */
 
-
 - (IBAction)BackButton:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
-    [Singleton sharedMySingleton].InfoClosed = YES;
-
 }
-
 @end

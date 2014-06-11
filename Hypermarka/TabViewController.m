@@ -1,19 +1,18 @@
 //
-//  InfoViewController.m
+//  TabViewController.m
 //  Hypermarka
 //
-//  Created by Bogdan Redkin on 06.06.14.
+//  Created by Bogdan Redkin on 11.06.14.
 //  Copyright (c) 2014 mifors. All rights reserved.
 //
 
-#import "InfoViewController.h"
+#import "TabViewController.h"
 
-@interface InfoViewController ()
+@interface TabViewController ()
 
 @end
 
-@implementation InfoViewController
-@synthesize NavigationTitle;
+@implementation TabViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,11 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NavigationTitle.title = [Singleton sharedMySingleton].TitleForInfo;
-    [Singleton sharedMySingleton].InfoClosed = NO;
-    NSString *htmlString = [[Singleton sharedMySingleton].info2 objectAtIndex:0];
-    [htmlString stringByDecodingXMLEntities];
-    NSLog(@"Info: %@", htmlString);
+    NSLog(@"Test");
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,12 +45,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-
-- (IBAction)BackButton:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
-    [Singleton sharedMySingleton].InfoClosed = YES;
-
-}
 
 @end

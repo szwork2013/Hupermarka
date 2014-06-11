@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
@@ -9,46 +9,35 @@
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="StartViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tHf-Je-etx"/>
+                        <viewControllerLayoutGuide type="bottom" id="TUI-1A-oz7"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FoU-5W-gr8">
-                                <rect key="frame" x="257" y="225" width="43" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Карта">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Njy-WV-SdI" kind="modal" id="lsj-wZ-kLn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fG1-o7-73B">
-                                <rect key="frame" x="20" y="225" width="121" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Каталог товаров"/>
-                                <connections>
-                                    <segue destination="Win-dz-Unz" kind="modal" id="hqg-TY-Za7"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="91" y="22"/>
+            <point key="canvasLocation" x="-404" y="360"/>
         </scene>
         <!--Podcategories View Controller-->
         <scene sceneID="fug-BH-cEH">
             <objects>
                 <viewController storyboardIdentifier="PodcategoriesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cxj-pD-2oa" customClass="PodcategoriesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bnU-MD-Wp4"/>
+                        <viewControllerLayoutGuide type="bottom" id="mKG-oc-3u9"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Ij-aq-sov">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" id="yOx-mi-Wo0">
-                                <rect key="frame" x="0.0" y="13" width="320" height="44"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yOx-mi-Wo0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="cwW-kl-13w">
@@ -60,8 +49,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="JGi-yZ-3lE">
-                                <rect key="frame" x="0.0" y="56" width="320" height="424"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JGi-yZ-3lE">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -80,31 +69,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BnY-9e-fhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="427" y="587"/>
+            <point key="canvasLocation" x="427" y="664"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="di8-e3-glM">
             <objects>
                 <viewController storyboardIdentifier="404error" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ktr-o5-hrz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sNB-hr-fto"/>
+                        <viewControllerLayoutGuide type="bottom" id="edB-UF-5ng"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IpN-2g-3pz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Страница в разработке" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="krn-Gm-5Gb">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Страница в разработке" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krn-Gm-5Gb">
                                 <rect key="frame" x="65" y="229" width="190" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="seM-2p-V4E">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seM-2p-V4E">
                                 <rect key="frame" x="118" y="258" width="84" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="На главную">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" id="WXb-i7-5CO"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -112,18 +102,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJd-an-ibJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="430" y="1185"/>
+            <point key="canvasLocation" x="427" y="1323"/>
         </scene>
         <!--Catalog View Controller-->
         <scene sceneID="QQ9-43-YOD">
             <objects>
                 <viewController storyboardIdentifier="CatalogViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t5U-et-MAt" customClass="CatalogViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iao-Tz-IFo"/>
+                        <viewControllerLayoutGuide type="bottom" id="fSE-St-gUl"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gmx-no-rb5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="iE2-wa-dym">
-                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="iE2-wa-dym">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
@@ -131,14 +125,14 @@
                                     <outlet property="delegate" destination="t5U-et-MAt" id="2ze-8b-kuF"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" id="KRI-Oc-i88">
-                                <rect key="frame" x="0.0" y="13" width="320" height="44"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="36B-St-7UU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="Jw2-3L-psR">
-                                        <barButtonItem key="leftBarButtonItem" title="Назад" id="uXF-ai-pgi">
+                                    <navigationItem title="Title" id="hGo-AV-UFE">
+                                        <barButtonItem key="leftBarButtonItem" title="Назад" id="Vpa-Zj-pC3">
                                             <connections>
-                                                <action selector="BackButton:" destination="t5U-et-MAt" id="bcC-C1-Q3V"/>
+                                                <action selector="BackButton:" destination="t5U-et-MAt" id="n19-2L-g0Z"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -147,24 +141,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="KZc-m1-NF2"/>
                     <connections>
                         <outlet property="CatTableView" destination="iE2-wa-dym" id="AnH-Bv-GYi"/>
-                        <outlet property="NivigationTitle" destination="Jw2-3L-psR" id="czC-ZL-FBL"/>
+                        <outlet property="NivigationTitle" destination="hGo-AV-UFE" id="kOA-EB-7EG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U2c-mY-Uwx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="587"/>
+            <point key="canvasLocation" x="766" y="664"/>
         </scene>
         <!--Shops View Controller-->
         <scene sceneID="zsH-sO-EBZ">
             <objects>
                 <viewController storyboardIdentifier="ShopsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gMF-SS-ZAw" customClass="ShopsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w77-cU-MOc"/>
+                        <viewControllerLayoutGuide type="bottom" id="324-w3-xou"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qxv-pI-wI4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" id="6Hz-XZ-5wK">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Hz-XZ-5wK">
                                 <rect key="frame" x="0.0" y="14" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
@@ -177,8 +176,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HAa-y3-tW8">
-                                <rect key="frame" x="-7" y="58" width="327" height="422"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="HAa-y3-tW8">
+                                <rect key="frame" x="-7" y="58" width="327" height="510"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -198,26 +197,52 @@
         <scene sceneID="547-Qc-XFT">
             <objects>
                 <viewController storyboardIdentifier="InfoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UOV-hW-xzw" customClass="InfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5hN-hG-eR8"/>
+                        <viewControllerLayoutGuide type="bottom" id="vRJ-BF-Uok"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qZb-06-C9u">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ub-HY-5Sd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="ZLb-AE-Vf3">
+                                        <barButtonItem key="leftBarButtonItem" title="Назад" id="zfc-Tb-IWF">
+                                            <connections>
+                                                <action selector="BackButton:" destination="UOV-hW-xzw" id="45F-tM-MrG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="NavigationTitle" destination="ZLb-AE-Vf3" id="x0w-wK-GQR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8d-HO-xep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1113" y="587"/>
+            <point key="canvasLocation" x="1113" y="664"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Vsx-OW-fLO">
             <objects>
                 <viewController storyboardIdentifier="TableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gr1-CT-c6y" customClass="TableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KBa-oe-Ua4"/>
+                        <viewControllerLayoutGuide type="bottom" id="OnG-Ig-8cs"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nKu-1t-cHR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="u0F-2l-W10">
-                                <rect key="frame" x="0.0" y="30" width="320" height="420"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="u0F-2l-W10">
+                                <rect key="frame" x="0.0" y="44" width="320" height="486"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -225,16 +250,25 @@
                                     <outlet property="delegate" destination="Gr1-CT-c6y" id="kZO-fH-yFG"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jpu-eW-uJr">
-                                <rect key="frame" x="0.0" y="448" width="320" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpu-eW-uJr">
+                                <rect key="frame" x="-6" y="538" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Ок">
+                                <state key="normal" title="Перейти к карте">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="Njy-WV-SdI" kind="modal" id="rgo-n4-FTv"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="864-IS-EbG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Выберите категории" id="n4V-1g-4gJ">
+                                        <barButtonItem key="leftBarButtonItem" title="На главную" id="Ab5-c7-Ztq"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -246,25 +280,34 @@
             </objects>
             <point key="canvasLocation" x="427" y="22"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Map View Controller - Карта-->
         <scene sceneID="iIa-0S-FyY">
             <objects>
                 <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Njy-WV-SdI" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fRT-0w-Ziu"/>
+                        <viewControllerLayoutGuide type="bottom" id="vHX-Lb-TA1"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wxW-ye-ScS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="Vap-YB-M3u">
-                                <rect key="frame" x="0.0" y="58" width="320" height="510"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vap-YB-M3u">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <navigationBar contentMode="scaleToFill" id="2TX-Z7-4PL">
-                                <rect key="frame" x="0.0" y="14" width="320" height="44"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2TX-Z7-4PL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Магазины на карте" id="pzF-7M-SAp">
-                                        <barButtonItem key="leftBarButtonItem" title="Фильтр" id="GO9-3X-vE5">
+                                        <barButtonItem key="leftBarButtonItem" title="Назад" id="SdK-Pb-ktf">
+                                            <connections>
+                                                <action selector="BackButton:" destination="Njy-WV-SdI" id="UuG-uU-EM8"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Фильтр" id="GO9-3X-vE5">
                                             <connections>
                                                 <action selector="CloseModals:" destination="Njy-WV-SdI" id="ylX-3A-aK9"/>
                                             </connections>
@@ -275,8 +318,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="Карта" id="fwD-1l-58g"/>
                     <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="view2" destination="Vap-YB-M3u" id="hDZ-Ik-0tg"/>
                     </connections>
@@ -285,16 +329,20 @@
             </objects>
             <point key="canvasLocation" x="766" y="22"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Table View Controller - Item-->
         <scene sceneID="DZg-PK-lmf">
             <objects>
                 <viewController storyboardIdentifier="CategoriesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Win-dz-Unz" customClass="TableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eGo-nU-2dV"/>
+                        <viewControllerLayoutGuide type="bottom" id="ULc-qi-yOU"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NfJ-ro-B1h">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9HN-Qy-jnS">
-                                <rect key="frame" x="0.0" y="57" width="320" height="423"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9HN-Qy-jnS">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -302,8 +350,8 @@
                                     <outlet property="delegate" destination="Win-dz-Unz" id="FJm-rw-hJA"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" id="6mg-Uw-3vv">
-                                <rect key="frame" x="0.0" y="13" width="320" height="44"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6mg-Uw-3vv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Выберите категорию" id="xYg-su-atX">
@@ -318,21 +366,261 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="pwt-Yc-E6k"/>
+                    <navigationItem key="navigationItem" id="5rf-zf-2RT"/>
                     <connections>
                         <outlet property="expansionTableView" destination="9HN-Qy-jnS" id="QeZ-7s-kET"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdT-dY-9wd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="91" y="587"/>
+            <point key="canvasLocation" x="90" y="455"/>
+        </scene>
+        <!--Arenda View Controller-->
+        <scene sceneID="58Z-L5-TL9">
+            <objects>
+                <viewController storyboardIdentifier="ArendaViewController" id="T2x-nK-tbh" customClass="ArendaViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OWu-bw-ToB"/>
+                        <viewControllerLayoutGuide type="bottom" id="mMs-o8-Kjg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mKu-9f-ftm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="3300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBC-My-rzN">
+                                <rect key="frame" x="0.0" y="8" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="LcS-em-V9W"/>
+                                    <constraint firstAttribute="height" constant="44" id="yZV-Qx-3Iq"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Арендаторам" id="6C3-LC-SPp">
+                                        <barButtonItem key="leftBarButtonItem" title="Назад" id="0rn-uO-b41">
+                                            <connections>
+                                                <action selector="BackButton:" destination="T2x-nK-tbh" id="652-t6-LM2"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aaG-pr-zMg">
+                                <rect key="frame" x="0.0" y="52" width="320" height="3248"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="W11-YX-Yxt">
+                                        <rect key="frame" x="20" y="0.0" width="280" height="207"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="207" id="q8E-NO-u0L"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Правила для Арендаторов площадей гипермаркета распродаж “hypermarka.com”">
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="28" name="Helvetica"/>
+                                                    <font key="NSOriginalFont" size="28" name="Helvetica"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="rft-gm-eRP">
+                                        <rect key="frame" x="20" y="248" width="280" height="1200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1200" id="EB8-OE-4qQ"/>
+                                        </constraints>
+                                        <string key="text">Уважаемые Арендаторы, для того чтобы Вы могли в полной мере использовать возможности нашего сайта, предлагаем ознакомиться со следующей полезной информацией.
+
+Миссия сайта “hypermarka.com” заключается в том, чтобы предоставить Вам возможность за небольшие деньги и в короткие сроки открыть свои магазины на площадях нашего гипермаркета распродаж.
+
+Внушительный рекламный бюджет проекта, а также сама идея гипермаркета распродаж как единой площадки для всех распродаж, гарантированно вызовут интерес потенциальных Потребителей Ваших товаров и услуг. Следовательно, у Вас отпадет необходимость в дополнительных тратах на проведение собственных рекламных кампаний.
+
+Удобные сервисы гипермаркета распродаж “hypermarka.com” позволят Вам быстро заключить договор аренды и наполнить страницы Вашего виртуального магазина всей необходимой информацией. Полную инструкцию по наполнению своего виртуального магазина контентом Вы найдете на страницах сайта “hypermarka.com”. При возникновении вопросов к Вам на помощь придут наши специалисты.
+
+Для арендаторов мы предусмотрели два варианта сотрудничества: для частных лиц – практически без документооборота и для юридических лиц – с возможностью ведения документооборота по всем заказанным услугам. Также мы предоставляем арендаторам сервисы по продвижению своих товаров и услуг внутри гипермаркета распродаж. Подробности приводим ниже.
+
+</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Pwj-Xd-JDd">
+                                        <rect key="frame" x="20" y="1456" width="280" height="232"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="232" id="ABp-ER-ZXN"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="1.Шаг.">
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="17" name="Helvetica-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content"> Право заявить акцию (любые улучшенные условия торговли) на собственной странице. Это платная услуга, которая позволит:
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="- продвинуть Ваш товар или услугу на верхние страницы списка по результатам поиска,">
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0_image_2065_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Nvg-ls-L86">
+                                        <rect key="frame" x="20" y="1696" width="280" height="166"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="166" id="ovt-ZN-xyS"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="-отобразить наличие акции на карте" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7R-xX-ueK">
+                                        <rect key="frame" x="12" y="1883" width="296" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="0_image_2067_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bGR-DK-8wd">
+                                        <rect key="frame" x="20" y="1918" width="280" height="209"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="209" id="2Ps-Qi-x37"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="288" translatesAutoresizingMaskIntoConstraints="NO" id="cUg-cj-JaY">
+                                        <rect key="frame" x="20" y="2143" width="288" height="480"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="480" id="7RF-6c-OLF"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">Заявленная акция предоставит Вам преимущество по отношению к конкурентам из числа арендаторов, а также позволит предложить товары и услуги потенциальным Покупателям на самых выгодных условиях.
+
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="2. Шаг. ">
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="17" name="Helvetica-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">Возможность продвинуть заявленную акцию внутри сайта. Это платная услуга, которая позволит продублировать заявленную акцию на главной странице “hypermarka.com” или на страницах тематических разделов (например “Стройка и Ремонт”). Суть данного предложения – проинформировать о заявленной акции не только Покупателей, которые ищут именно Ваш товар или услугу, но и всех остальных Посетителей гипермаркета распродаж.</string>
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="0_image_2066_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Qxl-pF-RGC">
+                                        <rect key="frame" x="20" y="2631" width="280" height="172"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="172" id="Kgd-eR-klz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="0_image_2068_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Fqt-ox-rUb">
+                                        <rect key="frame" x="20" y="2811" width="280" height="176"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="176" id="boZ-YE-aqg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="xEy-Ax-OrY">
+                                        <rect key="frame" x="20" y="2995" width="280" height="162"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="162" id="gRB-B9-7M1"/>
+                                        </constraints>
+                                        <string key="text">Администрация гипермаркета распродаж “hypermarka.com” выражает Вам благодарность за использование нашего сервиса. Мы уверены, что наше сотрудничество позволит поднять Ваш бизнес на новые высоты!</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Pwj-Xd-JDd" firstAttribute="top" secondItem="rft-gm-eRP" secondAttribute="bottom" constant="8" id="2Dt-8W-SJt"/>
+                                    <constraint firstAttribute="trailing" secondItem="xEy-Ax-OrY" secondAttribute="trailing" constant="20" id="2gV-SA-4e9"/>
+                                    <constraint firstItem="bGR-DK-8wd" firstAttribute="leading" secondItem="aaG-pr-zMg" secondAttribute="leading" constant="20" id="3Zp-UL-O1P"/>
+                                    <constraint firstAttribute="centerX" secondItem="W11-YX-Yxt" secondAttribute="centerX" id="4CZ-Fq-k9w"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pwj-Xd-JDd" secondAttribute="trailing" constant="20" id="4Tu-nG-ruq"/>
+                                    <constraint firstAttribute="centerX" secondItem="rft-gm-eRP" secondAttribute="centerX" id="54C-wQ-P2R"/>
+                                    <constraint firstAttribute="trailing" secondItem="cUg-cj-JaY" secondAttribute="trailing" constant="12" id="C0h-ag-pAQ"/>
+                                    <constraint firstItem="cUg-cj-JaY" firstAttribute="leading" secondItem="aaG-pr-zMg" secondAttribute="leading" constant="20" id="J6G-oM-Gns"/>
+                                    <constraint firstItem="xEy-Ax-OrY" firstAttribute="top" secondItem="Fqt-ox-rUb" secondAttribute="bottom" constant="8" id="NbN-oH-5oi"/>
+                                    <constraint firstItem="Qxl-pF-RGC" firstAttribute="top" secondItem="cUg-cj-JaY" secondAttribute="bottom" constant="8" id="NsB-ol-3C8"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qxl-pF-RGC" secondAttribute="trailing" constant="20" id="OXT-PE-1aB"/>
+                                    <constraint firstItem="Fqt-ox-rUb" firstAttribute="leading" secondItem="aaG-pr-zMg" secondAttribute="leading" constant="20" id="SAL-W7-quk"/>
+                                    <constraint firstAttribute="trailing" secondItem="W11-YX-Yxt" secondAttribute="trailing" constant="20" id="WZp-cn-X9F"/>
+                                    <constraint firstAttribute="trailing" secondItem="rft-gm-eRP" secondAttribute="trailing" constant="20" id="YRJ-yi-h1d"/>
+                                    <constraint firstItem="Nvg-ls-L86" firstAttribute="leading" secondItem="aaG-pr-zMg" secondAttribute="leading" constant="20" id="Ztq-sb-Jwx"/>
+                                    <constraint firstAttribute="bottom" secondItem="xEy-Ax-OrY" secondAttribute="bottom" constant="91" id="aGc-Ms-2JB"/>
+                                    <constraint firstItem="Nvg-ls-L86" firstAttribute="top" secondItem="Pwj-Xd-JDd" secondAttribute="bottom" constant="8" id="cpu-CE-f4R"/>
+                                    <constraint firstItem="rft-gm-eRP" firstAttribute="leading" secondItem="aaG-pr-zMg" secondAttribute="leading" constant="20" id="cyy-yE-LZP"/>
+                                    <constraint firstItem="Pwj-Xd-JDd" firstAttribute="leading" secondItem="aaG-pr-zMg" secondAttribute="leading" constant="20" id="dIv-Oi-WTD"/>
+                                    <constraint firstItem="xEy-Ax-OrY" firstAttribute="leading" secondItem="aaG-pr-zMg" secondAttribute="leading" constant="20" id="fiF-B9-2g5"/>
+                                    <constraint firstItem="Fqt-ox-rUb" firstAttribute="top" secondItem="Qxl-pF-RGC" secondAttribute="bottom" constant="8" id="gDO-74-h31"/>
+                                    <constraint firstItem="rft-gm-eRP" firstAttribute="top" secondItem="W11-YX-Yxt" secondAttribute="bottom" constant="41" id="gi3-iL-AwG"/>
+                                    <constraint firstItem="W11-YX-Yxt" firstAttribute="top" secondItem="aaG-pr-zMg" secondAttribute="top" id="hfM-gk-qmF"/>
+                                    <constraint firstItem="bGR-DK-8wd" firstAttribute="top" secondItem="y7R-xX-ueK" secondAttribute="bottom" constant="14" id="iGY-3E-B5z"/>
+                                    <constraint firstAttribute="trailing" secondItem="bGR-DK-8wd" secondAttribute="trailing" constant="20" id="lZW-yA-TTG"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nvg-ls-L86" secondAttribute="trailing" constant="20" id="nOB-AV-rzB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fqt-ox-rUb" secondAttribute="trailing" constant="20" id="wUf-OF-HrB"/>
+                                    <constraint firstItem="W11-YX-Yxt" firstAttribute="leading" secondItem="aaG-pr-zMg" secondAttribute="leading" constant="20" id="whX-ln-3zd"/>
+                                    <constraint firstItem="Qxl-pF-RGC" firstAttribute="leading" secondItem="aaG-pr-zMg" secondAttribute="leading" constant="20" id="xd4-0H-csL"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aaG-pr-zMg" firstAttribute="leading" secondItem="mKu-9f-ftm" secondAttribute="leading" id="2uG-xi-am3"/>
+                            <constraint firstAttribute="trailing" secondItem="aaG-pr-zMg" secondAttribute="trailing" id="5k4-YJ-4rO"/>
+                            <constraint firstItem="yBC-My-rzN" firstAttribute="leading" secondItem="mKu-9f-ftm" secondAttribute="leading" id="GyA-4S-c2e"/>
+                            <constraint firstItem="aaG-pr-zMg" firstAttribute="top" secondItem="yBC-My-rzN" secondAttribute="bottom" id="PHK-D6-dOb"/>
+                            <constraint firstItem="yBC-My-rzN" firstAttribute="top" secondItem="mKu-9f-ftm" secondAttribute="top" constant="8" id="UIE-X0-T3k"/>
+                            <constraint firstAttribute="trailing" secondItem="yBC-My-rzN" secondAttribute="trailing" id="XqN-LI-Ql5"/>
+                            <constraint firstItem="mMs-o8-Kjg" firstAttribute="top" secondItem="aaG-pr-zMg" secondAttribute="bottom" id="mbt-mc-QBO"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="3300"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I5r-jT-nwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101" y="1316"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="0_image_2065_1.jpg" width="720" height="365"/>
+        <image name="0_image_2066_1.jpg" width="720" height="520"/>
+        <image name="0_image_2067_1.jpg" width="720" height="517"/>
+        <image name="0_image_2068_1.jpg" width="720" height="425"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="rgo-n4-FTv"/>
-    </inferredMetricsTieBreakers>
 </document>

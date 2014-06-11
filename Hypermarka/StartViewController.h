@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
+#import "CategoriesViewController.h"
 
 @interface StartViewController : UIViewController
 
