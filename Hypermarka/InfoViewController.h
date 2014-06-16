@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
-#import "NSString+HTMLEntites.h"
 @interface InfoViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UINavigationItem *NavigationTitle;
 - (IBAction)BackButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end

@@ -66,8 +66,8 @@
                                                                        target:self
                                                                        action:@selector(buttonizeButtonTap:)];
     self.navigationItem.rightBarButtonItems = @[buttonizeButton];
-
 }
+
 -(void)buttonizeButtonTap:(id)sender{
     [self performSegueWithIdentifier:@"Associate" sender:sender];
 }
@@ -148,9 +148,12 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    UIStoryboard *storyboard = self.storyboard;
-    StartViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"CategoriesViewController"];
-    [self presentViewController:finished animated:YES completion:NULL];
+//    UIStoryboard *storyboard = self.storyboard;
+//    StartViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"CategoriesViewController"];
+//    [self presentViewController:finished animated:NO completion:NULL];
+//    CategoriesViewController *secondViewController =[self.storyboard instantiateViewControllerWithIdentifier:@"CategoriesViewController"];
+//    [self.navigationController pushViewController:secondViewController animated:YES];
+
 }
 - (void)didReceiveMemoryWarning
 {

@@ -45,9 +45,9 @@
 		4391532E1920F84F0059CFC5 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4391532D1920F84F0059CFC5 /* StartViewController.m */; };
 		4395825719252DC700BB086E /* ExpansionTableTestData2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4395825619252DC700BB086E /* ExpansionTableTestData2.plist */; };
 		439582591925309C00BB086E /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 439582581925309C00BB086E /* Data.plist */; };
+		A537E395194EDD0700F4A661 /* Hypermarka.com.html in Resources */ = {isa = PBXBuildFile; fileRef = A537E394194EDD0700F4A661 /* Hypermarka.com.html */; };
 		A559B6F319409062001C30F5 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A559B6F119409062001C30F5 /* MyCell.m */; };
 		A559B6F419409062001C30F5 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A559B6F219409062001C30F5 /* MyCell.xib */; };
-		A588735D19473050007905D9 /* NSString+HTMLEntites.m in Sources */ = {isa = PBXBuildFile; fileRef = A588735C19473050007905D9 /* NSString+HTMLEntites.m */; };
 		A58873EA19484FB0007905D9 /* 0_image_2065_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A58873E919484FB0007905D9 /* 0_image_2065_1.jpg */; };
 		A58873EC19485037007905D9 /* 0_image_2067_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A58873EB19485037007905D9 /* 0_image_2067_1.jpg */; };
 		A58873EE194850D8007905D9 /* 0_image_2066_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A58873ED194850D8007905D9 /* 0_image_2066_1.jpg */; };
@@ -56,7 +56,6 @@
 		A5895DA4193F0EA100411B15 /* PodcategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5895DA3193F0EA100411B15 /* PodcategoriesViewController.m */; };
 		A5895DA7193F0ECC00411B15 /* CatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5895DA6193F0ECC00411B15 /* CatalogViewController.m */; };
 		A599F8C21941C7A40046A88A /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A599F8C11941C7A40046A88A /* InfoViewController.m */; };
-		A599F91A1941CC5A0046A88A /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A599F9191941CC5A0046A88A /* libxml2.2.dylib */; };
 		A599F91C1941CD440046A88A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A599F91B1941CD440046A88A /* libxml2.dylib */; };
 		A599F91E1941D1FE0046A88A /* SelectionImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A599F91D1941D1FE0046A88A /* SelectionImage.png */; };
 		A5A1736519458C6B0063CD2A /* ShopsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1736419458C6B0063CD2A /* ShopsViewController.m */; };
@@ -133,11 +132,10 @@
 		4391532D1920F84F0059CFC5 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		4395825619252DC700BB086E /* ExpansionTableTestData2.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ExpansionTableTestData2.plist; sourceTree = "<group>"; };
 		439582581925309C00BB086E /* Data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
+		A537E394194EDD0700F4A661 /* Hypermarka.com.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Hypermarka.com.html; sourceTree = "<group>"; };
 		A559B6F019409062001C30F5 /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
 		A559B6F119409062001C30F5 /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
 		A559B6F219409062001C30F5 /* MyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
-		A588735B19473050007905D9 /* NSString+HTMLEntites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTMLEntites.h"; sourceTree = "<group>"; };
-		A588735C19473050007905D9 /* NSString+HTMLEntites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTMLEntites.m"; sourceTree = "<group>"; };
 		A58873E919484FB0007905D9 /* 0_image_2065_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0_image_2065_1.jpg; sourceTree = "<group>"; };
 		A58873EB19485037007905D9 /* 0_image_2067_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0_image_2067_1.jpg; sourceTree = "<group>"; };
 		A58873ED194850D8007905D9 /* 0_image_2066_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0_image_2066_1.jpg; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A599F91C1941CD440046A88A /* libxml2.dylib in Frameworks */,
-				A599F91A1941CC5A0046A88A /* libxml2.2.dylib in Frameworks */,
 				439152F71920F8040059CFC5 /* CoreGraphics.framework in Frameworks */,
 				439152F91920F8040059CFC5 /* UIKit.framework in Frameworks */,
 				439152F51920F8040059CFC5 /* Foundation.framework in Frameworks */,
@@ -304,8 +301,6 @@
 				4391530D1920F8040059CFC5 /* ViewController.m */,
 				4320F8B51926744E0046998B /* TableViewController.h */,
 				4320F8B61926744E0046998B /* TableViewController.m */,
-				A588735B19473050007905D9 /* NSString+HTMLEntites.h */,
-				A588735C19473050007905D9 /* NSString+HTMLEntites.m */,
 				4320F8C2192674870046998B /* Cells */,
 				439152FB1920F8040059CFC5 /* Supporting Files */,
 				4391530F1920F8040059CFC5 /* Images.xcassets */,
@@ -316,6 +311,7 @@
 		439152FB1920F8040059CFC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A537E394194EDD0700F4A661 /* Hypermarka.com.html */,
 				A58873EF19485116007905D9 /* 0_image_2068_1.jpg */,
 				A58873ED194850D8007905D9 /* 0_image_2066_1.jpg */,
 				A58873EB19485037007905D9 /* 0_image_2067_1.jpg */,
@@ -448,6 +444,7 @@
 			files = (
 				439582591925309C00BB086E /* Data.plist in Resources */,
 				4320F8C9192675AF0046998B /* UpAccessory.png in Resources */,
+				A537E395194EDD0700F4A661 /* Hypermarka.com.html in Resources */,
 				439153101920F8040059CFC5 /* Images.xcassets in Resources */,
 				436C99B5193CC1BE003CBF03 /* cluster1.png in Resources */,
 				436C99B6193CC1BE003CBF03 /* cluster1@2x.png in Resources */,
@@ -492,7 +489,6 @@
 				436C99A2193CC0F9003CBF03 /* REVClusterManager.m in Sources */,
 				A58873F319485324007905D9 /* ArendaViewController.m in Sources */,
 				A5895DA7193F0ECC00411B15 /* CatalogViewController.m in Sources */,
-				A588735D19473050007905D9 /* NSString+HTMLEntites.m in Sources */,
 				436C99A7193CC105003CBF03 /* REVClusterAnnotationView.m in Sources */,
 				4391532E1920F84F0059CFC5 /* StartViewController.m in Sources */,
 				A5A1736D1945CE5F0063CD2A /* MyCell2.m in Sources */,
@@ -644,6 +640,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hypermarka/Hypermarka-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "Hypermarka/Hypermarka-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -663,6 +664,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hypermarka/Hypermarka-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "Hypermarka/Hypermarka-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";

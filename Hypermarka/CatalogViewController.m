@@ -73,7 +73,7 @@
         self.info = [NSMutableArray array];
     }
     if (![Singleton sharedMySingleton].info2) {
-        [Singleton sharedMySingleton].info2 = [NSMutableDictionary dictionary];
+        [Singleton sharedMySingleton].info2 = [NSMutableArray array];
     }
     self.Images = [[SVC valueForKey:@"image"] objectAtIndex:0];
     for (int i = 0; i<[self.Images count]; i++) {
@@ -88,7 +88,6 @@
     self.Titles = [[SVC valueForKey:@"title"] objectAtIndex:0];
     self.Prices = [[SVC valueForKey:@"price"] objectAtIndex:0];
     self.info = [SVC valueForKey:@"short_descr"];
-    NSLog(@"TEST INFO : %@", self.info);
     self.CatTableView.rowHeight = 150;
     
     Reachability *reachability = [Reachability reachabilityForInternetConnection];
@@ -161,6 +160,13 @@
     [Singleton sharedMySingleton].TitleForInfo = [Titles objectAtIndex:indexPath.row];
     if ([self.info count]>indexPath.row) {
         [Singleton sharedMySingleton].info2 = [self.info objectAtIndex:indexPath.row];
+        [Singleton sharedMySingleton].imageURL = [self.ImagesNames objectAtIndex:indexPath.row];
+        [Singleton sharedMySingleton].price = [[self.Prices objectAtIndex:indexPath.row] valueForKey:@"RUR"];
+    }
+    else {
+        [Singleton sharedMySingleton].info2 = nil;
+        [Singleton sharedMySingleton].imageURL = nil;
+        [Singleton sharedMySingleton].price = nil;
     }
     UIStoryboard *storyboard = self.storyboard;
     CatalogViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"InfoViewController"];

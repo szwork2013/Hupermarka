@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "REVClusterMapView.h"
+#import "TableViewController.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate >{
     NSMutableData *receivedData;

@@ -33,6 +33,8 @@
 @property (nonatomic, retain)NSString *TitleForInfo;
 @property (nonatomic) BOOL InfoClosed;
 @property (nonatomic) BOOL FilterOpen;
+@property (nonatomic, retain)NSString *imageURL;
+@property (nonatomic, retain)NSString *price;
 
 -(void)test;
 

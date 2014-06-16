@@ -8,7 +8,7 @@
         <!--Start View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="StartViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="StartViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tHf-Je-etx"/>
                         <viewControllerLayoutGuide type="bottom" id="TUI-1A-oz7"/>
@@ -16,13 +16,45 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtb-zs-wwu">
+                                <rect key="frame" x="20" y="269" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="каталог">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Win-dz-Unz" kind="modal" id="1rp-4h-fVO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fG-mR-Ooj">
+                                <rect key="frame" x="120" y="269" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="карта">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Njy-WV-SdI" kind="modal" id="KZC-le-cSl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yoj-b6-FLu">
+                                <rect key="frame" x="205" y="269" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="арендаторам">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="T2x-nK-tbh" kind="modal" id="HCO-42-zak"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-404" y="360"/>
+            <point key="canvasLocation" x="-291" y="455"/>
         </scene>
         <!--Podcategories View Controller-->
         <scene sceneID="fug-BH-cEH">
@@ -218,11 +250,17 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o9s-Jr-rPB">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="NavigationTitle" destination="ZLb-AE-Vf3" id="x0w-wK-GQR"/>
+                        <outlet property="webView" destination="o9s-Jr-rPB" id="dFC-Hv-3ZX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8d-HO-xep" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -280,7 +318,7 @@
             </objects>
             <point key="canvasLocation" x="427" y="22"/>
         </scene>
-        <!--Map View Controller - Карта-->
+        <!--Map View Controller-->
         <scene sceneID="iIa-0S-FyY">
             <objects>
                 <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Njy-WV-SdI" customClass="MapViewController" sceneMemberID="viewController">
@@ -318,7 +356,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Карта" id="fwD-1l-58g"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -329,10 +366,10 @@
             </objects>
             <point key="canvasLocation" x="766" y="22"/>
         </scene>
-        <!--Table View Controller - Item-->
+        <!--CategoriesViewController-->
         <scene sceneID="DZg-PK-lmf">
             <objects>
-                <viewController storyboardIdentifier="CategoriesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Win-dz-Unz" customClass="TableViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoriesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Win-dz-Unz" userLabel="CategoriesViewController" customClass="TableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eGo-nU-2dV"/>
                         <viewControllerLayoutGuide type="bottom" id="ULc-qi-yOU"/>
@@ -354,20 +391,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Выберите категорию" id="xYg-su-atX">
-                                        <barButtonItem key="leftBarButtonItem" title="Назад" id="38p-eq-gWf">
-                                            <connections>
-                                                <action selector="BackButton:" destination="Win-dz-Unz" id="deL-n1-IM2"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Выберите категорию" id="xYg-su-atX"/>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="pwt-Yc-E6k"/>
-                    <navigationItem key="navigationItem" id="5rf-zf-2RT"/>
+                    <navigationItem key="navigationItem" title="REEWE" id="5rf-zf-2RT">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="Ebj-vh-fwh"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="expansionTableView" destination="9HN-Qy-jnS" id="QeZ-7s-kET"/>
                     </connections>
@@ -487,13 +519,16 @@
                                             <constraint firstAttribute="height" constant="166" id="ovt-ZN-xyS"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="-отобразить наличие акции на карте" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7R-xX-ueK">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-отобразить наличие акции на карте" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7R-xX-ueK">
                                         <rect key="frame" x="12" y="1883" width="296" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="hPM-Yg-bFd"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="0_image_2067_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bGR-DK-8wd">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0_image_2067_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bGR-DK-8wd">
                                         <rect key="frame" x="20" y="1918" width="280" height="209"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
@@ -568,12 +603,15 @@
                                     <constraint firstAttribute="trailing" secondItem="Pwj-Xd-JDd" secondAttribute="trailing" constant="20" id="4Tu-nG-ruq"/>
                                     <constraint firstAttribute="centerX" secondItem="rft-gm-eRP" secondAttribute="centerX" id="54C-wQ-P2R"/>
                                     <constraint firstAttribute="trailing" secondItem="cUg-cj-JaY" secondAttribute="trailing" constant="12" id="C0h-ag-pAQ"/>
+                                    <constraint firstItem="y7R-xX-ueK" firstAttribute="top" secondItem="Nvg-ls-L86" secondAttribute="bottom" constant="21" id="DXL-Js-JRL"/>
+                                    <constraint firstItem="y7R-xX-ueK" firstAttribute="leading" secondItem="aaG-pr-zMg" secondAttribute="leading" constant="12" id="Dkm-85-3rM"/>
                                     <constraint firstItem="cUg-cj-JaY" firstAttribute="leading" secondItem="aaG-pr-zMg" secondAttribute="leading" constant="20" id="J6G-oM-Gns"/>
                                     <constraint firstItem="xEy-Ax-OrY" firstAttribute="top" secondItem="Fqt-ox-rUb" secondAttribute="bottom" constant="8" id="NbN-oH-5oi"/>
                                     <constraint firstItem="Qxl-pF-RGC" firstAttribute="top" secondItem="cUg-cj-JaY" secondAttribute="bottom" constant="8" id="NsB-ol-3C8"/>
                                     <constraint firstAttribute="trailing" secondItem="Qxl-pF-RGC" secondAttribute="trailing" constant="20" id="OXT-PE-1aB"/>
                                     <constraint firstItem="Fqt-ox-rUb" firstAttribute="leading" secondItem="aaG-pr-zMg" secondAttribute="leading" constant="20" id="SAL-W7-quk"/>
                                     <constraint firstAttribute="trailing" secondItem="W11-YX-Yxt" secondAttribute="trailing" constant="20" id="WZp-cn-X9F"/>
+                                    <constraint firstAttribute="trailing" secondItem="y7R-xX-ueK" secondAttribute="trailing" constant="12" id="Y7A-I8-phY"/>
                                     <constraint firstAttribute="trailing" secondItem="rft-gm-eRP" secondAttribute="trailing" constant="20" id="YRJ-yi-h1d"/>
                                     <constraint firstItem="Nvg-ls-L86" firstAttribute="leading" secondItem="aaG-pr-zMg" secondAttribute="leading" constant="20" id="Ztq-sb-Jwx"/>
                                     <constraint firstAttribute="bottom" secondItem="xEy-Ax-OrY" secondAttribute="bottom" constant="91" id="aGc-Ms-2JB"/>
@@ -609,7 +647,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I5r-jT-nwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="101" y="1316"/>
+            <point key="canvasLocation" x="90" y="1323"/>
         </scene>
     </scenes>
     <resources>
@@ -623,4 +661,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="KZC-le-cSl"/>
+    </inferredMetricsTieBreakers>
 </document>
