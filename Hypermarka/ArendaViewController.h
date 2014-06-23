@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "REFrostedViewController.h"
 
 @interface ArendaViewController : UIViewController
-- (IBAction)BackButton:(id)sender;
+- (IBAction)MenuButton:(id)sender;
 
 @end

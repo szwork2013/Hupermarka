@@ -42,13 +42,10 @@ static Singleton* _sharedMySingleton = nil;
 -(id)init {
     self = [super init];
     if (self != nil) {
-        // initialize stuff here
+        
     }
     
     return self;
 }
 
--(void)test {
-    
-}
 @end

@@ -40,85 +40,51 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    UIDeviceOrientation orientation1 = [[UIDevice currentDevice] orientation];
-    [Singleton sharedMySingleton].orientation = orientation1;
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    
-    
-    if (orientation1 == UIDeviceOrientationLandscapeLeft) {
-        [Singleton sharedMySingleton].height = screenBounds.size.width;
-        [Singleton sharedMySingleton].width = screenBounds.size.height;
-    }else if (orientation1 == UIDeviceOrientationLandscapeRight){
-        [Singleton sharedMySingleton].height = screenBounds.size.width;
-        [Singleton sharedMySingleton].width = screenBounds.size.height;
-    }else if (orientation1 == UIDeviceOrientationPortrait){
-        [Singleton sharedMySingleton].height = screenBounds.size.height;
-        [Singleton sharedMySingleton].width = screenBounds.size.width;
-    }else if (orientation1 == UIDeviceOrientationPortraitUpsideDown){
-        [Singleton sharedMySingleton].height = screenBounds.size.height;
-        [Singleton sharedMySingleton].width = screenBounds.size.width;
-    }
-
-    
-    if ([Singleton sharedMySingleton].width == 0) {
-        [Singleton sharedMySingleton].width = screenBounds.size.width;
-        [Singleton sharedMySingleton].height = screenBounds.size.height;
-    }
-    
-    
-    CGRect viewBounds = CGRectMake(0, 0, [Singleton sharedMySingleton].width, [Singleton sharedMySingleton].height);
-    
-    
-    _mapView = [[REVClusterMapView alloc] initWithFrame:viewBounds];
     _mapView.delegate = self;
     
-    [self.view2 addSubview:_mapView];
-    
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
     
     _mapView.showsUserLocation = YES;
     [_mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     [_mapView setRegion:MKCoordinateRegionMake(IzhveskCoordinate, citySpan) animated:YES];
-    NSMutableString *namez = [NSMutableString string];
-    for (int i=0; i<[[Singleton sharedMySingleton].names count]; i++) {
-        NSString *name = [NSString stringWithFormat:@"%@;",[[Singleton sharedMySingleton].names objectAtIndex:i]];
-        [name substringToIndex:[name length]-1];
-        [namez appendString:name];
-    }
-    if ([[Singleton sharedMySingleton].names count]==0) {
-        [namez appendString:@"proektarhitektura;zemelnieraboti;perekritiya;krovlyavodostok;fasad;ozelenenylandshaft;prochee;dizain;lakikraskiklei;napolnyepokritiya;stenovyepokritiya;potolki;oknadveri;elektrika;santehnika;lodjiibalkoni;prochee;lakikraskiklei;kirpichbetonjbi;sypuchyematerialy;pilomaterialy;metalloprodukciya;plastikovyetruby;uteplenyeizolyaciya;peregorodkigipsokarton;metizykrepej;prochee;garaji;bani;teplicy;besedki;kaminymangaly;baseyny;zabopyvorota;prochee;septikikanalizaciya;gaz;elektrichestvo;vodateplo;ventilyaciyakondicionirovanie;svyaztvinternet;ohrana;umnyidom;electroinstrument;pnevmoinstrument;benzoinstrument;slesarnomontajnyinstrument;izmeritelnayatehnika;sadovayatehnikainstrument;svarka;organizacii;specialisty;brigady;rabochie;masternavseruki;prochee;ofch"];
-        first = YES;
-    }
+    md = [[MapDownloads alloc] init];
     
-    // создаем запрос
-    NSString *url = [NSString stringWithFormat:@"http://work.hypermarka.com/hm/svc-shoplist?list=%@&swlat=56.4922648749152&swlng=52.202664648437505&nelat=57.24433849873821&nelng=54.2351353515625", namez];
-    NSLog(@"%@", url);
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]
-                                             cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0];
-    
-    // создаём соединение и начинаем загрузку
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    
-    if (connection) {
-        // соединение началось
-        NSLog(@"Connecting...");
-        // создаем NSMutableData, чтобы сохранить полученные данные
-        receivedData = [NSMutableData data];
-    } else {
-        // при попытке соединиться произошла ошибка
-        NSLog(@"Connection error!");
-    }
-    if (!AnnTitles) {
-        AnnTitles = [NSMutableArray array];
-    }
-    if (!OriginalTitles) {
-        OriginalTitles = [NSMutableArray array];
-    }
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    
+    NSData *Data = [md DataForMaps];
+    receivedData = [NSMutableData dataWithData:Data];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:receivedData options:kNilOptions error:nil];
+    NSArray *metka = [json objectForKey:@"metka"];
+    NSArray *addresses = [metka valueForKey:@"address"];
+    NSArray *lat = [metka valueForKey:@"lat"];
+    NSArray *lon = [metka valueForKey:@"lon"];
+    OriginalTitles = [metka valueForKey:@"name"];
+    NSArray *worktime = [metka valueForKey:@"worktime"];
+    IDS = [metka valueForKey:@"shop_id"];
+    long Ncount = [OriginalTitles count];
+    NSMutableArray *pins = [NSMutableArray array];
+    
+    
+    for (int i = 0; i<Ncount; i++) {
+        NSString *titles =[NSString stringWithFormat:@"%@ (%@)", [addresses objectAtIndex:i], [OriginalTitles objectAtIndex:i]];
+        [AnnTitles addObject:titles];
+        NSString *subtitles = [NSString stringWithFormat:@"Режим работы: %@", [worktime objectAtIndex:i]];
+        CGFloat X = [[lat objectAtIndex:i] floatValue];
+        CGFloat Y = [[lon objectAtIndex:i] floatValue];
+        
+        CLLocationCoordinate2D newCoord = {X, Y};
+        
+        REVClusterPin *pin = [[REVClusterPin alloc] init];
+        pin.title = titles;
+        pin.subtitle = subtitles;
+        pin.coordinate = newCoord;
+        
+        [pins addObject:pin];
+    }
+    [_mapView removeAnnotations:_mapView.annotations];
+    [_mapView addAnnotations:pins];
+}
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     [_mapView removeAnnotations:_mapView.annotations];
@@ -127,34 +93,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return YES;
-}
-- (void)didRotate:(NSNotification *)notification{
-    
-    UIDeviceOrientation orientation1 = [[UIDevice currentDevice] orientation];
-    [Singleton sharedMySingleton].orientation = orientation1;
-    
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    
-    
-    if (orientation1 == UIDeviceOrientationLandscapeLeft) {
-        NSLog(@"Кнопка Home сп  рава (Альбомная ориентация) высоту и ширину надо поменять");
-        [Singleton sharedMySingleton].height = screenBounds.size.width;
-        [Singleton sharedMySingleton].width = screenBounds.size.height;
-    }else if (orientation1 == UIDeviceOrientationLandscapeRight){
-        NSLog(@"Кнопка Home слева (Альбомная ориентация) высоту и ширину надо поменять");
-        [Singleton sharedMySingleton].height = screenBounds.size.width;
-        [Singleton sharedMySingleton].width = screenBounds.size.height;
-    }else if (orientation1 == UIDeviceOrientationPortrait){
-        NSLog(@"Кнопка Home снизу (Портретная ориенация) высоту и ширину менять не надо");
-        [Singleton sharedMySingleton].height = screenBounds.size.height;
-        [Singleton sharedMySingleton].width = screenBounds.size.width;
-    }else if (orientation1 == UIDeviceOrientationPortraitUpsideDown){
-        NSLog(@"Кнопка Home сверху (Портретная ориенация) высоту и ширину менять не надо");
-        [Singleton sharedMySingleton].height = screenBounds.size.height;
-        [Singleton sharedMySingleton].width = screenBounds.size.width;
-    }
 }
 
 #pragma mark -
@@ -163,7 +102,6 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
     if([annotation class] == MKUserLocation.class) {
-		//userLocation = annotation;
 		return nil;
 	}
     
@@ -197,7 +135,8 @@
                                                    reuseIdentifier:@"pin"];
         
         annView.image = [UIImage imageNamed:@"pinpoint1.png"];
-        annView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeInfoDark];
+        annView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        
         annView.canShowCallout = YES;
         
         annView.calloutOffset = CGPointMake(-6.0, 0.0);
@@ -221,80 +160,17 @@
 
 - (IBAction)CloseModals:(id)sender
 {
-    if (![Singleton sharedMySingleton].FilterOpen) {
-        UIStoryboard *storyboard = self.storyboard;
-        MapViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"TableViewController"];
-        [Singleton sharedMySingleton].FilterOpen = YES;
-        [self presentViewController:finished animated:YES completion:NULL];
-    }
-    else{
-      [self dismissModalViewControllerAnimated:YES];
-    }
-}
-
-- (IBAction)BackButton:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    // получен ответ от сервера
-    [receivedData setLength:0];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    // добавляем новые данные к receivedData
-    [receivedData appendData:data];
-}
-
-- (void)connection:(NSURLConnection *)connection
-  didFailWithError:(NSError *)error {
-    
-    // выводим сообщение об ошибке
-    NSString *errorString = [[NSString alloc] initWithFormat:@"Connection failed! Error - %@ %@ %@",
-                             [error localizedDescription],
-                             [error description],
-                             [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]];
-    NSLog(@"%@",errorString);
+    UIViewController *myController = [self.storyboard instantiateViewControllerWithIdentifier:@"TableViewController"];
+    [self.navigationController pushViewController: myController animated:YES];
 }
 
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    // данные получены
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:receivedData options:kNilOptions error:nil];
-    NSLog(@"%@", json);
-    NSArray *metka = [json objectForKey:@"metka"];
-    NSLog(@"metka: %@", metka);
-    NSArray *addresses = [metka valueForKey:@"address"];
-    NSArray *lat = [metka valueForKey:@"lat"];
-    NSArray *lon = [metka valueForKey:@"lon"];
-    OriginalTitles = [metka valueForKey:@"name"];
-    NSArray *worktime = [metka valueForKey:@"worktime"];
-    IDS = [metka valueForKey:@"shop_id"];
-    long Ncount = [OriginalTitles count];
-    NSMutableArray *pins = [NSMutableArray array];
 
-    
-    for (int i = 0; i<Ncount; i++) {
-        NSString *titles =[NSString stringWithFormat:@"%@ (%@)", [addresses objectAtIndex:i], [OriginalTitles objectAtIndex:i]];
-        [AnnTitles addObject:titles];
-        NSString *subtitles = [NSString stringWithFormat:@"Режим работы: %@", [worktime objectAtIndex:i]];
-        CGFloat X = [[lat objectAtIndex:i] floatValue];
-        CGFloat Y = [[lon objectAtIndex:i] floatValue];
-        
-        CLLocationCoordinate2D newCoord = {X, Y};
-        
-        REVClusterPin *pin = [[REVClusterPin alloc] init];
-        pin.title = titles;
-        pin.subtitle = subtitles;
-        pin.coordinate = newCoord;
-        
-        [pins addObject:pin];
-    }
-    
-    [_mapView addAnnotations:pins];
-    
+- (IBAction)MenuButton:(id)sender {
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+
+    [self.frostedViewController presentMenuViewController];
 }
 
 - (void)mapView:(MKMapView *)mapView
@@ -318,25 +194,15 @@ didSelectAnnotationView:(MKAnnotationView *)view
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
     REVClusterAnnotationView *annotationTapped = (REVClusterAnnotationView *)view.annotation;
     for (int i = 0; i<[AnnTitles count]; i++) {
-        NSLog(@"i = %i", i);
         if ([[AnnTitles objectAtIndex:i] isEqualToString:annotationTapped.title]) {
-            [Singleton sharedMySingleton].ShopId = [IDS objectAtIndex:i];
-            [Singleton sharedMySingleton].InfoTitle = [OriginalTitles objectAtIndex:i];
+            [Singleton sharedMySingleton].SelectedShopId = [IDS objectAtIndex:i];
+            [Singleton sharedMySingleton].TitleForShopInCatalog = [OriginalTitles objectAtIndex:i];
             UIStoryboard *storyboard = self.storyboard;
             MapViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"CategoriesViewController"];
             [self presentViewController:finished animated:YES completion:NULL];
             [Singleton sharedMySingleton].AfterMap = YES;
         }
     }
-}
-
--(void)viewDidUnload{
-    NSLog(@"bad1");
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    NSLog(@"Map Memory warning");
 }
 
 @end

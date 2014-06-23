@@ -7,6 +7,8 @@
 //
 
 #import "CatalogViewController.h"
+#define WithoutImagesCell @"MyCell2"
+#define WithImagesCell @"MyCell"
 
 @interface CatalogViewController ()
 
@@ -14,52 +16,47 @@
 
 @implementation CatalogViewController
 
-@synthesize Shops, Prices, Titles, Images,  NivigationTitle, CatTableView, downloadImage, info;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize Shops, Prices, Titles, Images,  NivigationTitle, CatTableView, downloadImage, info, number;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *StringUrl = [NSString string];
-    if ([Singleton sharedMySingleton].AfterMap) {
-    StringUrl = [NSString stringWithFormat:@"http://work.hypermarka.com/hm/proto-showcase?shop=%@&sort=price&section=stroy&subsection=%@&pg=all&theme=11",[Singleton sharedMySingleton].ShopId, [Singleton sharedMySingleton].SelectedName];
-    }
-    else{
-    StringUrl = [NSString stringWithFormat:@"http://work.hypermarka.com/hm/proto-showcase?shop=0&sort=price&section=stroy&subsection=%@&pg=all&theme=11", [Singleton sharedMySingleton].SelectedName];
-    }
-    NSURL *url = [NSURL URLWithString:StringUrl];
-    NSData *allCoursesData = [[NSData alloc] initWithContentsOfURL:url];
-    NSString *allData = [[NSString alloc] initWithData:allCoursesData encoding:NSUTF8StringEncoding];
-    NSMutableString *mutableData = [NSMutableString stringWithString:allData];
-    int c = 0;
-    for (int i=0;i<mutableData.length ; i++) {
-        NSString *element = [mutableData substringWithRange:NSMakeRange(i, 1)];
-        if ([element isEqualToString:@"}"]) {
-            if (c == 0) {
-                [mutableData deleteCharactersInRange:NSMakeRange(i, 1)];
-            }
-            c++;
-        }
-    }
-    [mutableData insertString:@"}" atIndex:mutableData.length-2];
     
-    NSString *DataStr = [NSString stringWithString:mutableData];
-    NSData *data = [DataStr dataUsingEncoding:NSUTF8StringEncoding];
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    [reachability startNotifier];
+    
+    NetworkStatus status = [reachability currentReachabilityStatus];
+    
+    if (status == ReachableViaWiFi)
+    {
+        downloadImage = YES;
+    }
+    else if (status == ReachableViaWWAN)
+    {
+        downloadImage = NO;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"Мобильное интернет соеденение.\n Отображать картинки?."
+                                                       delegate:self
+                                              cancelButtonTitle:@"Да"
+                                              otherButtonTitles:@"Нет", nil];
+        [alert show];
+    }
+
+    [ProgressHUD show:@"Загрузка данных"];
+    NSOperation *DownloadOperation = [NSOperation new];
+    DownloadOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(DownloadAndParse:) object:nil];
+    [[Singleton sharedMySingleton].AllOpetarions addOperation:DownloadOperation];
+
+    CatalogDownloads *cd = [[CatalogDownloads alloc] init];
+    NSData *data = [cd DataDownloads];
     NSError *error;
     NSMutableArray *DataDict = [NSJSONSerialization
                                 JSONObjectWithData:data
                                 options:NSJSONReadingMutableContainers
                                 error:&error];
-    NivigationTitle.title = [Singleton sharedMySingleton].SelectedTitle;
+    NivigationTitle.title = [Singleton sharedMySingleton].TitleForNavigationBar;
     NSMutableArray *SVC = [DataDict valueForKey:@"svc"];
+    number = 0;
     if (!self.Titles) {
         self.Titles = [NSMutableArray array];
     }
@@ -72,10 +69,10 @@
     if (!self.info) {
         self.info = [NSMutableArray array];
     }
-    if (![Singleton sharedMySingleton].info2) {
-        [Singleton sharedMySingleton].info2 = [NSMutableArray array];
+    if (![Singleton sharedMySingleton].DataForInfoView) {
+        [Singleton sharedMySingleton].DataForInfoView = [NSMutableArray array];
     }
-    self.Images = [[SVC valueForKey:@"image"] objectAtIndex:0];
+    self.Images = [[SVC valueForKey:ImageKey] objectAtIndex:0];
     for (int i = 0; i<[self.Images count]; i++) {
         
         if ([self.Images objectAtIndex:i] == [NSNull null]) {
@@ -85,32 +82,25 @@
             [self.ImagesNames addObject:[NSString stringWithFormat:@"http://work.hypermarka.com/res_ru/%@", [[self.Images objectAtIndex:i] valueForKey:@"name"]]];
         }
     }
-    self.Titles = [[SVC valueForKey:@"title"] objectAtIndex:0];
-    self.Prices = [[SVC valueForKey:@"price"] objectAtIndex:0];
-    self.info = [SVC valueForKey:@"short_descr"];
+    self.Titles = [[SVC valueForKey:TitleKey] objectAtIndex:0];
+    self.Prices = [[SVC valueForKey:PriceKey] objectAtIndex:0];
+    self.info = [SVC valueForKey:DescriptionKey];
     self.CatTableView.rowHeight = 150;
-    
-    Reachability *reachability = [Reachability reachabilityForInternetConnection];
-    [reachability startNotifier];
-    
-    NetworkStatus status = [reachability currentReachabilityStatus];
-    
-   if (status == ReachableViaWiFi)
-    {
+}
+-(void)DownloadAndParse:(NSURL *)url{
+
+}
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
         downloadImage = YES;
     }
-    else if (status == ReachableViaWWAN)
-    {
+    else if(buttonIndex == 1){
         downloadImage = NO;
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                        message:@"Мобильное интернет соеденение.\n Картинки отображаться не будут, перейдите в информацию о товаре для просмотра."
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
     }
 }
-
+-(void)DownloadAndParse{
+    
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -127,64 +117,51 @@
     MyCell *cell = (MyCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (downloadImage) {
         if (cell == nil) {
-            //если ячейка не найдена - создаем новую
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyCell" owner:self options:nil];
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:WithImagesCell owner:self options:nil];
             cell = [nib objectAtIndex:0];
         }
         
         cell.name.text = [Titles objectAtIndex:indexPath.row];
         NSURL *url = [NSURL URLWithString:[self.ImagesNames objectAtIndex:indexPath.row]];
         cell.photo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-        cell.photo.contentMode = UIViewContentModeScaleAspectFit;
-        cell.Price.text = [[self.Prices objectAtIndex:indexPath.row] valueForKey:@"RUR"];
-        cell.Shop.text = [Singleton sharedMySingleton].InfoTitle;
-        if ([Singleton sharedMySingleton].InfoClosed) {
+        NSString *message = [NSString stringWithFormat:@"Загрузка картинки %i из %i", indexPath.row+1, [self.Titles count]];
+        if (indexPath.row+1 == [self.Titles count]) {
+            [ProgressHUD showSuccess:nil];
         }
+        else{
+            [ProgressHUD show:message];
+        }
+        cell.photo.contentMode = UIViewContentModeScaleAspectFit;
+        cell.Price.text = [[self.Prices objectAtIndex:indexPath.row] valueForKey:RublesKey];
+        cell.Shop.text = [Singleton sharedMySingleton].TitleForShopInCatalog;
     }
     else {
         if (cell == nil) {
-            //если ячейка не найдена - создаем новую
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyCell2" owner:self options:nil];
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:WithoutImagesCell owner:self options:nil];
             cell = [nib objectAtIndex:0];
         }
         
         cell.name.text = [Titles objectAtIndex:indexPath.row];
-        cell.Price.text = [[self.Prices objectAtIndex:indexPath.row] valueForKey:@"RUR"];
-        cell.Shop.text = [Singleton sharedMySingleton].InfoTitle;
+        cell.Price.text = [[self.Prices objectAtIndex:indexPath.row] valueForKey:RublesKey];
+        cell.Shop.text = [Singleton sharedMySingleton].TitleForShopInCatalog;
     }
-    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [Singleton sharedMySingleton].TitleForInfo = [Titles objectAtIndex:indexPath.row];
+    [Singleton sharedMySingleton].TitleForInfoView = [Titles objectAtIndex:indexPath.row];
     if ([self.info count]>indexPath.row) {
-        [Singleton sharedMySingleton].info2 = [self.info objectAtIndex:indexPath.row];
+        [Singleton sharedMySingleton].DataForInfoView = [self.info objectAtIndex:indexPath.row];
         [Singleton sharedMySingleton].imageURL = [self.ImagesNames objectAtIndex:indexPath.row];
-        [Singleton sharedMySingleton].price = [[self.Prices objectAtIndex:indexPath.row] valueForKey:@"RUR"];
+        [Singleton sharedMySingleton].priceForElementsOfCatalog = [[self.Prices objectAtIndex:indexPath.row] valueForKey:RublesKey];
     }
     else {
-        [Singleton sharedMySingleton].info2 = nil;
+        [Singleton sharedMySingleton].DataForInfoView = nil;
         [Singleton sharedMySingleton].imageURL = nil;
-        [Singleton sharedMySingleton].price = nil;
+        [Singleton sharedMySingleton].priceForElementsOfCatalog = nil;
     }
-    UIStoryboard *storyboard = self.storyboard;
-    CatalogViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"InfoViewController"];
-    [self presentViewController:finished animated:YES completion:NULL];
-
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
-- (IBAction)BackButton:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
-    [Singleton sharedMySingleton].close = YES;
+    UIViewController *myController = [self.storyboard instantiateViewControllerWithIdentifier:@"InfoViewController"];
+    [self.navigationController pushViewController: myController animated:YES];
 }
 
 @end

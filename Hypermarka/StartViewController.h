@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
-#import "CategoriesViewController.h"
+#import "StartDownloads.h"
+#import "Reachability.h"
 
 @interface StartViewController : UIViewController
+
+@property (nonatomic) BOOL internet;
 
 @end			

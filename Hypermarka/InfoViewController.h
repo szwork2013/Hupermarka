@@ -10,7 +10,6 @@
 #import "Singleton.h"
 @interface InfoViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UINavigationItem *NavigationTitle;
-- (IBAction)BackButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end

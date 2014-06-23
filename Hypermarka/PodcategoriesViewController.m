@@ -24,7 +24,6 @@
 @end
 
 @implementation PodcategoriesViewController
-@synthesize NavigationBar;
 @synthesize isOpen,selectIndex, arSelectedIndexPaths, CellIndexPathes, lists;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -41,91 +40,39 @@
     self.isOpen = NO;
     self.cat = NO;
 }
-- (void)viewDidAppear:(BOOL)animated{
-    self.TitleNavigation.title = [Singleton sharedMySingleton].TextLabelCell;
-    if ([self.TitleNavigation.title  isEqual: @"Стройка и ремонт"]) {
-    }
-    else{
-        NSLog(@"self.Tite = %@", self.TitleNavigation.title);
-        UIStoryboard *storyboard = self.storyboard;
-        PodcategoriesViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"404error"];
-        
-        [self presentViewController:finished animated:YES completion:NULL];
-    }
+- (void)viewWillAppear:(BOOL)animated{
+    [ProgressHUD dismiss];
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    UIDeviceOrientation orientation1 = [[UIDevice currentDevice] orientation];
-    [Singleton sharedMySingleton].orientation = orientation1;
-         
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    NSLog(@"Height = %f, width = %f", screenBounds.size.height, screenBounds.size.width);
-         if ([Singleton sharedMySingleton].width == 0) {
-             if (orientation1 == UIDeviceOrientationLandscapeLeft) {
-                 NSLog(@"Кнопка Home справа (Альбомная ориентация) высоту и ширину надо поменять");
-                 [Singleton sharedMySingleton].height = screenBounds.size.width;
-                 [Singleton sharedMySingleton].width = screenBounds.size.height;
-             }else if (orientation1 == UIDeviceOrientationLandscapeRight){
-                 NSLog(@"Кнопка Home слева (Альбомная ориентация) высоту и ширину надо поменять");
-                 [Singleton sharedMySingleton].height = screenBounds.size.width;
-                 [Singleton sharedMySingleton].width = screenBounds.size.height;
-             }else if (orientation1 == UIDeviceOrientationPortrait){
-                 NSLog(@"Кнопка Home снизу (Портретная ориенация) высоту и ширину менять не надо");
-                 [Singleton sharedMySingleton].height = screenBounds.size.height;
-                 [Singleton sharedMySingleton].width = screenBounds.size.width;
-             }else if (orientation1 == UIDeviceOrientationPortraitUpsideDown){
-                 NSLog(@"Кнопка Home сверху (Портретная ориенация) высоту и ширину менять не надо");
-                 [Singleton sharedMySingleton].height = screenBounds.size.height;
-                 [Singleton sharedMySingleton].width = screenBounds.size.width;
-             }else{
-                 NSLog(@"неопределена ориентация");
-                 [Singleton sharedMySingleton].height = screenBounds.size.height;
-                 [Singleton sharedMySingleton].width = screenBounds.size.width;}
-             
-         }
-         else {
-             NSLog(@"Ориентация неопределена");
-         }
-         NSLog(@"TableViewController");
-         NSString *path  = [[NSBundle mainBundle] pathForResource:@"ExpansionTableTestData2" ofType:@"plist"];
-         _dataList = [[NSMutableArray alloc] initWithContentsOfFile:path];
-         
-         self.expansionTableView.sectionFooterHeight = 0;
-         self.expansionTableView.sectionHeaderHeight = 0;
-         self.isOpen = NO;
-         if (!arSelectedIndexPaths) {
-             arSelectedIndexPaths = [NSMutableArray array];
-         }
-         if (!lists) {
-             lists = [NSMutableArray array];
-         }
-         if (![Singleton sharedMySingleton].names) {
-             [Singleton sharedMySingleton].names = [NSMutableArray array];
-         }
-         if (![Singleton sharedMySingleton].SelectedIndexes) {
-             [Singleton sharedMySingleton].SelectedIndexes = [NSMutableArray array];
-         }
-         NSString *test = self.restorationIdentifier;
-         if ([test  isEqual: @"CategoriesViewController"]) {
-             self.cat = YES;
-         }
+    self.expansionTableView.sectionFooterHeight = 0;
+    self.expansionTableView.sectionHeaderHeight = 0;
+    self.isOpen = NO;
+    if (!arSelectedIndexPaths) {
+        arSelectedIndexPaths = [NSMutableArray array];
+        }
+    if (!lists) {
+        lists = [NSMutableArray array];
+        }
+    if (![Singleton sharedMySingleton].NamesForRequestInMap) {
+        [Singleton sharedMySingleton].NamesForRequestInMap = [NSMutableArray array];
+        }
+    NSString *test = self.restorationIdentifier;
+    if ([test  isEqual: @"CategoriesViewController"]) {
+        self.cat = YES;
+        }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)back{
+    [self.navigationController popViewControllerAnimated:YES];
 }
-
 #pragma mark - Table view data source
          
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
     {
         int count;
-        count = [[Singleton sharedMySingleton].Titles2 count];
+        count = [[Singleton sharedMySingleton].TitlesForPodsectionInStroySection count];
         return count;
     }
          
@@ -133,7 +80,7 @@
     {
         if (self.isOpen) {
             if (self.selectIndex.section == section) {
-                NSMutableArray *TitleList = [[Singleton sharedMySingleton].podsections2 valueForKey:@"title"];
+                NSMutableArray *TitleList = [[Singleton sharedMySingleton].PodPodSectionForStroySection valueForKey:TitleKey];
                 return [[TitleList objectAtIndex:section] count]+1;;
         }
     }
@@ -155,8 +102,8 @@
                 cell = [[[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil] objectAtIndex:0];
             }
             
-            NSMutableArray *TitleList = [[Singleton sharedMySingleton].podsections2 valueForKey:@"title"];
-            NSMutableArray *NamesList = [[Singleton sharedMySingleton].podsections2 valueForKey:@"name"];
+            NSMutableArray *TitleList = [[Singleton sharedMySingleton].PodPodSectionForStroySection valueForKey:TitleKey];
+            NSMutableArray *NamesList = [[Singleton sharedMySingleton].PodPodSectionForStroySection valueForKey:NameKey];
             NSMutableArray *list = [TitleList objectAtIndex:self.selectIndex.section];
             cell.titleLabel.text = [list objectAtIndex:indexPath.row-1];
             lists = [NamesList objectAtIndex:self.selectIndex.section];
@@ -175,7 +122,7 @@
                 [cell.titleLabel setFont:[UIFont systemFontOfSize:16]];
             }
             else{
-                name = [[[Singleton sharedMySingleton].Titles2 objectAtIndex:indexPath.section]capitalizedString];
+                name = [[[Singleton sharedMySingleton].TitlesForPodsectionInStroySection objectAtIndex:indexPath.section]capitalizedString];
             }
             cell.titleLabel.text = name;
             if (self.cat) {
@@ -214,16 +161,14 @@
             }else
             {
                 if (isOpen) {
-                    NSMutableArray *NamesList = [[Singleton sharedMySingleton].podsections2 valueForKey:@"name"];
-                    NSMutableArray *TitleList = [[Singleton sharedMySingleton].podsections2 valueForKey:@"title"];
+                    NSMutableArray *NamesList = [[Singleton sharedMySingleton].PodPodSectionForStroySection valueForKey:NameKey];
+                    NSMutableArray *TitleList = [[Singleton sharedMySingleton].PodPodSectionForStroySection valueForKey:TitleKey];
                     NSString *SelectedString = [NSString stringWithString:[[NamesList objectAtIndex:indexPath.section]objectAtIndex:indexPath.row-1]];
                     NSString *SelectedTitle = [NSString stringWithString:[[TitleList objectAtIndex:indexPath.section]objectAtIndex:indexPath.row-1]];
-                    [Singleton sharedMySingleton].SelectedName =SelectedString;
-                    [Singleton sharedMySingleton].SelectedTitle = SelectedTitle;
-                    UIStoryboard *storyboard = self.storyboard;
-                    PodcategoriesViewController *finished = [storyboard instantiateViewControllerWithIdentifier:@"CatalogViewController"];
-                    
-                    [self presentViewController:finished animated:YES completion:NULL];
+                    [Singleton sharedMySingleton].NamesForRequestInCatalog =SelectedString;
+                    [Singleton sharedMySingleton].TitleForNavigationBar = SelectedTitle;
+                    UIViewController *myController = [self.storyboard instantiateViewControllerWithIdentifier:@"CatalogViewController"];
+                    [self.navigationController pushViewController: myController animated:YES];
                     
         }
     }
@@ -242,7 +187,7 @@
         
         [self.expansionTableView beginUpdates];
         
-        NSMutableArray *TitleList = [[Singleton sharedMySingleton].podsections2 valueForKey:@"title"];
+        NSMutableArray *TitleList = [[Singleton sharedMySingleton].PodPodSectionForStroySection valueForKey:TitleKey];
         int section = self.selectIndex.section;
         
         int contentCount = [[TitleList objectAtIndex:section] count];
@@ -273,7 +218,5 @@
     }
 
 
-- (IBAction)BackButton:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
-}
+
 @end

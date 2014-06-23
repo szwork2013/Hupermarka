@@ -10,8 +10,11 @@
 #import "Singleton.h"
 #import "MyCell.h"
 #import "Reachability.h"
+#import "CatalogDownloads.h"
+#import "ProgressHUD.h"
 
-@interface CatalogViewController : UIViewController
+@interface CatalogViewController : UIViewController{
+}
 
 @property (retain, nonatomic) NSMutableArray *Titles;
 @property (strong, nonatomic) NSMutableArray *Prices;
@@ -22,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *NivigationTitle;
 @property (weak, nonatomic) IBOutlet UITableView *CatTableView;
 @property (nonatomic) BOOL downloadImage;
+@property (nonatomic) int number;
 
-- (IBAction)BackButton:(id)sender;
 
 @end

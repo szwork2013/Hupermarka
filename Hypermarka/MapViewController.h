@@ -10,22 +10,23 @@
 #import <MapKit/MapKit.h>
 #import "REVClusterMapView.h"
 #import "TableViewController.h"
+#import "REFrostedViewController.h"
+#import "MapDownloads.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate >{
     NSMutableData *receivedData;
-    REVClusterMapView *_mapView;
+    MapDownloads *md;
     BOOL first;
+    IBOutlet REVClusterMapView *_mapView;
     int height;
     int width;
 }
 
-@property (strong, nonatomic) IBOutlet UIView *view2;
 @property (strong, nonatomic) NSMutableArray *AnnTitles;
 @property (strong, nonatomic) NSMutableArray *OriginalTitles;
 @property (strong, nonatomic) NSMutableArray *IDS;
 
-- (IBAction)segmentedControl:(UISegmentedControl*)sender;
 - (IBAction)CloseModals:(id)sender;
-- (IBAction)BackButton:(id)sender;
+- (IBAction)MenuButton:(id)sender;
 
 @end

@@ -28,6 +28,7 @@
 		436C99B6193CC1BE003CBF03 /* cluster1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 436C99B2193CC1BE003CBF03 /* cluster1@2x.png */; };
 		436C99B7193CC1BE003CBF03 /* pinpoint1.png in Resources */ = {isa = PBXBuildFile; fileRef = 436C99B3193CC1BE003CBF03 /* pinpoint1.png */; };
 		436C99B8193CC1BE003CBF03 /* pinpoint1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 436C99B4193CC1BE003CBF03 /* pinpoint1@2x.png */; };
+		437B44B81952C29E00D2FC55 /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B44B71952C29E00D2FC55 /* Error.m */; };
 		439152F51920F8040059CFC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439152F41920F8040059CFC5 /* Foundation.framework */; };
 		439152F71920F8040059CFC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439152F61920F8040059CFC5 /* CoreGraphics.framework */; };
 		439152F91920F8040059CFC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439152F81920F8040059CFC5 /* UIKit.framework */; };
@@ -58,7 +59,21 @@
 		A599F8C21941C7A40046A88A /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A599F8C11941C7A40046A88A /* InfoViewController.m */; };
 		A599F91C1941CD440046A88A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A599F91B1941CD440046A88A /* libxml2.dylib */; };
 		A599F91E1941D1FE0046A88A /* SelectionImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A599F91D1941D1FE0046A88A /* SelectionImage.png */; };
-		A5A1736519458C6B0063CD2A /* ShopsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1736419458C6B0063CD2A /* ShopsViewController.m */; };
+		A59E6125195181F7000A52A6 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = A59E6114195181F6000A52A6 /* RECommonFunctions.m */; };
+		A59E6126195181F7000A52A6 /* REFrostedContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59E6116195181F6000A52A6 /* REFrostedContainerViewController.m */; };
+		A59E6127195181F7000A52A6 /* REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59E6118195181F6000A52A6 /* REFrostedViewController.m */; };
+		A59E6128195181F7000A52A6 /* UIImage+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59E611A195181F6000A52A6 /* UIImage+REFrostedViewController.m */; };
+		A59E6129195181F7000A52A6 /* UIView+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59E611C195181F6000A52A6 /* UIView+REFrostedViewController.m */; };
+		A59E612A195181F7000A52A6 /* UIViewController+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59E611E195181F7000A52A6 /* UIViewController+REFrostedViewController.m */; };
+		A59E612B195181F7000A52A6 /* DEMORootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59E6120195181F7000A52A6 /* DEMORootViewController.m */; };
+		A59E612D195181F7000A52A6 /* DEMOMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59E6124195181F7000A52A6 /* DEMOMenuViewController.m */; };
+		A59E6132195182F9000A52A6 /* DEMONavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59E6131195182F9000A52A6 /* DEMONavigationController.m */; };
+		A59E617C1951A66E000A52A6 /* StartDownloads.m in Sources */ = {isa = PBXBuildFile; fileRef = A59E617B1951A66E000A52A6 /* StartDownloads.m */; };
+		A59E61801951B790000A52A6 /* MapDownloads.m in Sources */ = {isa = PBXBuildFile; fileRef = A59E617F1951B790000A52A6 /* MapDownloads.m */; };
+		A59E618319541F6E000A52A6 /* CatalogDownloads.m in Sources */ = {isa = PBXBuildFile; fileRef = A59E618219541F6E000A52A6 /* CatalogDownloads.m */; };
+		A59E61921957EE73000A52A6 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A59E618F1957EE73000A52A6 /* ProgressHUD.bundle */; };
+		A59E61931957EE73000A52A6 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A59E61911957EE73000A52A6 /* ProgressHUD.m */; };
+		A59E619A1957FC7E000A52A6 /* ConnectionErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59E61991957FC7E000A52A6 /* ConnectionErrorViewController.m */; };
 		A5A173681945C7370063CD2A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A173671945C7370063CD2A /* Reachability.m */; };
 		A5A1736D1945CE5F0063CD2A /* MyCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1736B1945CE5F0063CD2A /* MyCell2.m */; };
 		A5A1736E1945CE5F0063CD2A /* MyCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5A1736C1945CE5F0063CD2A /* MyCell2.xib */; };
@@ -109,6 +124,8 @@
 		436C99B2193CC1BE003CBF03 /* cluster1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cluster1@2x.png"; sourceTree = "<group>"; };
 		436C99B3193CC1BE003CBF03 /* pinpoint1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinpoint1.png; sourceTree = "<group>"; };
 		436C99B4193CC1BE003CBF03 /* pinpoint1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinpoint1@2x.png"; sourceTree = "<group>"; };
+		437B44B61952C29E00D2FC55 /* Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Error.h; path = ../Error.h; sourceTree = "<group>"; };
+		437B44B71952C29E00D2FC55 /* Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Error.m; path = ../Error.m; sourceTree = "<group>"; };
 		439152F11920F8040059CFC5 /* Hypermarka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hypermarka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		439152F41920F8040059CFC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		439152F61920F8040059CFC5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -151,8 +168,38 @@
 		A599F9191941CC5A0046A88A /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		A599F91B1941CD440046A88A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		A599F91D1941D1FE0046A88A /* SelectionImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SelectionImage.png; sourceTree = "<group>"; };
-		A5A1736319458C6B0063CD2A /* ShopsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopsViewController.h; sourceTree = "<group>"; };
-		A5A1736419458C6B0063CD2A /* ShopsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopsViewController.m; sourceTree = "<group>"; };
+		A59E6113195181F6000A52A6 /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		A59E6114195181F6000A52A6 /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		A59E6115195181F6000A52A6 /* REFrostedContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedContainerViewController.h; sourceTree = "<group>"; };
+		A59E6116195181F6000A52A6 /* REFrostedContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedContainerViewController.m; sourceTree = "<group>"; };
+		A59E6117195181F6000A52A6 /* REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedViewController.h; sourceTree = "<group>"; };
+		A59E6118195181F6000A52A6 /* REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedViewController.m; sourceTree = "<group>"; };
+		A59E6119195181F6000A52A6 /* UIImage+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+REFrostedViewController.h"; sourceTree = "<group>"; };
+		A59E611A195181F6000A52A6 /* UIImage+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+REFrostedViewController.m"; sourceTree = "<group>"; };
+		A59E611B195181F6000A52A6 /* UIView+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+REFrostedViewController.h"; sourceTree = "<group>"; };
+		A59E611C195181F6000A52A6 /* UIView+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+REFrostedViewController.m"; sourceTree = "<group>"; };
+		A59E611D195181F7000A52A6 /* UIViewController+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+REFrostedViewController.h"; sourceTree = "<group>"; };
+		A59E611E195181F7000A52A6 /* UIViewController+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+REFrostedViewController.m"; sourceTree = "<group>"; };
+		A59E611F195181F7000A52A6 /* DEMORootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMORootViewController.h; sourceTree = "<group>"; };
+		A59E6120195181F7000A52A6 /* DEMORootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMORootViewController.m; sourceTree = "<group>"; };
+		A59E6123195181F7000A52A6 /* DEMOMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOMenuViewController.h; sourceTree = "<group>"; };
+		A59E6124195181F7000A52A6 /* DEMOMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOMenuViewController.m; sourceTree = "<group>"; };
+		A59E6130195182F9000A52A6 /* DEMONavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMONavigationController.h; sourceTree = "<group>"; };
+		A59E6131195182F9000A52A6 /* DEMONavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMONavigationController.m; sourceTree = "<group>"; };
+		A59E617A1951A66E000A52A6 /* StartDownloads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartDownloads.h; sourceTree = "<group>"; };
+		A59E617B1951A66E000A52A6 /* StartDownloads.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartDownloads.m; sourceTree = "<group>"; };
+		A59E617E1951B790000A52A6 /* MapDownloads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDownloads.h; sourceTree = "<group>"; };
+		A59E617F1951B790000A52A6 /* MapDownloads.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDownloads.m; sourceTree = "<group>"; };
+		A59E618119541F6E000A52A6 /* CatalogDownloads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatalogDownloads.h; sourceTree = "<group>"; };
+		A59E618219541F6E000A52A6 /* CatalogDownloads.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatalogDownloads.m; sourceTree = "<group>"; };
+		A59E618F1957EE73000A52A6 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		A59E61901957EE73000A52A6 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		A59E61911957EE73000A52A6 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		A59E61981957FC7E000A52A6 /* ConnectionErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectionErrorViewController.h; path = ../ConnectionErrorViewController.h; sourceTree = "<group>"; };
+		A59E61991957FC7E000A52A6 /* ConnectionErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConnectionErrorViewController.m; path = ../ConnectionErrorViewController.m; sourceTree = "<group>"; };
+		A59E619C19582D8B000A52A6 /* Keys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Keys.h; path = ../Keys.h; sourceTree = "<group>"; };
+		A59E619F19583AE3000A52A6 /* OtherDefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherDefinitions.h; sourceTree = "<group>"; };
+		A59E61A019583C0D000A52A6 /* CategoriesIds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesIds.h; sourceTree = "<group>"; };
 		A5A173661945C7370063CD2A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A5A173671945C7370063CD2A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		A5A1736A1945CE5F0063CD2A /* MyCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell2.h; sourceTree = "<group>"; };
@@ -189,6 +236,12 @@
 		4320F8C2192674870046998B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				A5A1736A1945CE5F0063CD2A /* MyCell2.h */,
+				A5A1736B1945CE5F0063CD2A /* MyCell2.m */,
+				A5A1736C1945CE5F0063CD2A /* MyCell2.xib */,
+				A559B6F019409062001C30F5 /* MyCell.h */,
+				A559B6F119409062001C30F5 /* MyCell.m */,
+				A559B6F219409062001C30F5 /* MyCell.xib */,
 				4320F8BD192674570046998B /* Cell2.xib */,
 				4320F8B8192674570046998B /* Cell1.h */,
 				4320F8B9192674570046998B /* Cell1.m */,
@@ -270,37 +323,37 @@
 		439152FA1920F8040059CFC5 /* Hypermarka */ = {
 			isa = PBXGroup;
 			children = (
+				A59E619D19582DC1000A52A6 /* Definitions */,
+				A59E61941957EE79000A52A6 /* ProgressHUD */,
+				437B44B61952C29E00D2FC55 /* Error.h */,
+				437B44B71952C29E00D2FC55 /* Error.m */,
+				439153031920F8040059CFC5 /* AppDelegate.h */,
+				439153041920F8040059CFC5 /* AppDelegate.m */,
 				A5A173691945C7410063CD2A /* Reachabillty */,
 				436C99AD193CC161003CBF03 /* Singleton */,
 				439153061920F8040059CFC5 /* Main_iPhone.storyboard */,
+				A59E617D1951A679000A52A6 /* All download operations */,
 				A58873F119485324007905D9 /* ArendaViewController.h */,
 				A58873F219485324007905D9 /* ArendaViewController.m */,
 				4391532C1920F84F0059CFC5 /* StartViewController.h */,
 				4391532D1920F84F0059CFC5 /* StartViewController.m */,
-				439153041920F8040059CFC5 /* AppDelegate.m */,
-				439153031920F8040059CFC5 /* AppDelegate.h */,
 				A5895DA2193F0EA100411B15 /* PodcategoriesViewController.h */,
 				A5895DA3193F0EA100411B15 /* PodcategoriesViewController.m */,
 				A5895DA5193F0ECC00411B15 /* CatalogViewController.h */,
 				A5895DA6193F0ECC00411B15 /* CatalogViewController.m */,
-				A5A1736A1945CE5F0063CD2A /* MyCell2.h */,
-				A5A1736B1945CE5F0063CD2A /* MyCell2.m */,
-				A5A1736C1945CE5F0063CD2A /* MyCell2.xib */,
-				A559B6F019409062001C30F5 /* MyCell.h */,
-				A559B6F119409062001C30F5 /* MyCell.m */,
-				A559B6F219409062001C30F5 /* MyCell.xib */,
 				A599F8C01941C7A40046A88A /* InfoViewController.h */,
 				A599F8C11941C7A40046A88A /* InfoViewController.m */,
 				436C99AE193CC1A8003CBF03 /* MapViewController.h */,
 				436C99AF193CC1A8003CBF03 /* MapViewController.m */,
+				A59E61981957FC7E000A52A6 /* ConnectionErrorViewController.h */,
+				A59E61991957FC7E000A52A6 /* ConnectionErrorViewController.m */,
 				436C99A8193CC10D003CBF03 /* Кластер */,
 				436C99A9193CC11C003CBF03 /* Аннотации */,
-				A5A1736319458C6B0063CD2A /* ShopsViewController.h */,
-				A5A1736419458C6B0063CD2A /* ShopsViewController.m */,
 				4391530C1920F8040059CFC5 /* ViewController.h */,
 				4391530D1920F8040059CFC5 /* ViewController.m */,
 				4320F8B51926744E0046998B /* TableViewController.h */,
 				4320F8B61926744E0046998B /* TableViewController.m */,
+				A59E612E19518254000A52A6 /* menu */,
 				4320F8C2192674870046998B /* Cells */,
 				439152FB1920F8040059CFC5 /* Supporting Files */,
 				4391530F1920F8040059CFC5 /* Images.xcassets */,
@@ -352,6 +405,64 @@
 				4391531F1920F8040059CFC5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A59E612E19518254000A52A6 /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				A59E6130195182F9000A52A6 /* DEMONavigationController.h */,
+				A59E6131195182F9000A52A6 /* DEMONavigationController.m */,
+				A59E6123195181F7000A52A6 /* DEMOMenuViewController.h */,
+				A59E6124195181F7000A52A6 /* DEMOMenuViewController.m */,
+				A59E611F195181F7000A52A6 /* DEMORootViewController.h */,
+				A59E6120195181F7000A52A6 /* DEMORootViewController.m */,
+				A59E6113195181F6000A52A6 /* RECommonFunctions.h */,
+				A59E6114195181F6000A52A6 /* RECommonFunctions.m */,
+				A59E6115195181F6000A52A6 /* REFrostedContainerViewController.h */,
+				A59E6116195181F6000A52A6 /* REFrostedContainerViewController.m */,
+				A59E6117195181F6000A52A6 /* REFrostedViewController.h */,
+				A59E6118195181F6000A52A6 /* REFrostedViewController.m */,
+				A59E6119195181F6000A52A6 /* UIImage+REFrostedViewController.h */,
+				A59E611A195181F6000A52A6 /* UIImage+REFrostedViewController.m */,
+				A59E611B195181F6000A52A6 /* UIView+REFrostedViewController.h */,
+				A59E611C195181F6000A52A6 /* UIView+REFrostedViewController.m */,
+				A59E611D195181F7000A52A6 /* UIViewController+REFrostedViewController.h */,
+				A59E611E195181F7000A52A6 /* UIViewController+REFrostedViewController.m */,
+			);
+			name = menu;
+			sourceTree = "<group>";
+		};
+		A59E617D1951A679000A52A6 /* All download operations */ = {
+			isa = PBXGroup;
+			children = (
+				A59E617A1951A66E000A52A6 /* StartDownloads.h */,
+				A59E617B1951A66E000A52A6 /* StartDownloads.m */,
+				A59E617E1951B790000A52A6 /* MapDownloads.h */,
+				A59E617F1951B790000A52A6 /* MapDownloads.m */,
+				A59E618119541F6E000A52A6 /* CatalogDownloads.h */,
+				A59E618219541F6E000A52A6 /* CatalogDownloads.m */,
+			);
+			name = "All download operations";
+			sourceTree = "<group>";
+		};
+		A59E61941957EE79000A52A6 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				A59E618F1957EE73000A52A6 /* ProgressHUD.bundle */,
+				A59E61901957EE73000A52A6 /* ProgressHUD.h */,
+				A59E61911957EE73000A52A6 /* ProgressHUD.m */,
+			);
+			name = ProgressHUD;
+			sourceTree = "<group>";
+		};
+		A59E619D19582DC1000A52A6 /* Definitions */ = {
+			isa = PBXGroup;
+			children = (
+				A59E61A019583C0D000A52A6 /* CategoriesIds.h */,
+				A59E619F19583AE3000A52A6 /* OtherDefinitions.h */,
+				A59E619C19582D8B000A52A6 /* Keys.h */,
+			);
+			name = Definitions;
 			sourceTree = "<group>";
 		};
 		A5A173691945C7410063CD2A /* Reachabillty */ = {
@@ -455,6 +566,7 @@
 				439153081920F8040059CFC5 /* Main_iPhone.storyboard in Resources */,
 				A58873EE194850D8007905D9 /* 0_image_2066_1.jpg in Resources */,
 				A5A173701945CFD90063CD2A /* Hypermarka3.gif in Resources */,
+				A59E61921957EE73000A52A6 /* ProgressHUD.bundle in Resources */,
 				4320F8C7192675AF0046998B /* DownAccessory.png in Resources */,
 				A58873EC19485037007905D9 /* 0_image_2067_1.jpg in Resources */,
 				436C99B7193CC1BE003CBF03 /* pinpoint1.png in Resources */,
@@ -484,25 +596,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5A1736519458C6B0063CD2A /* ShopsViewController.m in Sources */,
 				4391530E1920F8040059CFC5 /* ViewController.m in Sources */,
 				436C99A2193CC0F9003CBF03 /* REVClusterManager.m in Sources */,
 				A58873F319485324007905D9 /* ArendaViewController.m in Sources */,
+				A59E6128195181F7000A52A6 /* UIImage+REFrostedViewController.m in Sources */,
+				A59E617C1951A66E000A52A6 /* StartDownloads.m in Sources */,
+				A59E612B195181F7000A52A6 /* DEMORootViewController.m in Sources */,
+				A59E618319541F6E000A52A6 /* CatalogDownloads.m in Sources */,
 				A5895DA7193F0ECC00411B15 /* CatalogViewController.m in Sources */,
 				436C99A7193CC105003CBF03 /* REVClusterAnnotationView.m in Sources */,
 				4391532E1920F84F0059CFC5 /* StartViewController.m in Sources */,
+				A59E6125195181F7000A52A6 /* RECommonFunctions.m in Sources */,
 				A5A1736D1945CE5F0063CD2A /* MyCell2.m in Sources */,
+				A59E612D195181F7000A52A6 /* DEMOMenuViewController.m in Sources */,
+				A59E61801951B790000A52A6 /* MapDownloads.m in Sources */,
 				A559B6F319409062001C30F5 /* MyCell.m in Sources */,
 				439153051920F8040059CFC5 /* AppDelegate.m in Sources */,
+				A59E6132195182F9000A52A6 /* DEMONavigationController.m in Sources */,
+				A59E6129195181F7000A52A6 /* UIView+REFrostedViewController.m in Sources */,
+				A59E61931957EE73000A52A6 /* ProgressHUD.m in Sources */,
+				A59E6127195181F7000A52A6 /* REFrostedViewController.m in Sources */,
 				436C99A0193CC0F9003CBF03 /* REVAnnotationsCollection.m in Sources */,
 				4320F8BE192674570046998B /* Cell1.m in Sources */,
 				A5A173681945C7370063CD2A /* Reachability.m in Sources */,
+				A59E619A1957FC7E000A52A6 /* ConnectionErrorViewController.m in Sources */,
 				436C99A1193CC0F9003CBF03 /* REVClusterBlock.m in Sources */,
 				436C99AC193CC155003CBF03 /* Singleton.m in Sources */,
 				A599F8C21941C7A40046A88A /* InfoViewController.m in Sources */,
+				437B44B81952C29E00D2FC55 /* Error.m in Sources */,
+				A59E612A195181F7000A52A6 /* UIViewController+REFrostedViewController.m in Sources */,
 				4320F8B71926744E0046998B /* TableViewController.m in Sources */,
 				A5895DA4193F0EA100411B15 /* PodcategoriesViewController.m in Sources */,
 				439153011920F8040059CFC5 /* main.m in Sources */,
+				A59E6126195181F7000A52A6 /* REFrostedContainerViewController.m in Sources */,
 				436C99A4193CC0F9003CBF03 /* REVClusterPin.m in Sources */,
 				436C99B0193CC1A8003CBF03 /* MapViewController.m in Sources */,
 				436C99A3193CC0F9003CBF03 /* REVClusterMapView.m in Sources */,

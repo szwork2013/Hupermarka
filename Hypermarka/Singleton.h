@@ -9,34 +9,25 @@
 #import <Foundation/Foundation.h>
 
 @interface Singleton : NSObject{
-
 }
-@property (nonatomic, retain)NSMutableArray *Titles;
-@property (nonatomic, retain)NSString *path;
-@property (nonatomic, retain)NSMutableArray *podsections;
-@property (nonatomic, retain)NSMutableArray *names;
-@property (nonatomic, retain)NSMutableArray *SelectedIndexes;
-@property (nonatomic)int width;
-@property (nonatomic)int height;
-@property (nonatomic)BOOL close;
-@property (nonatomic)UIDeviceOrientation orientation;
-@property (nonatomic, retain)NSString *TextLabelCell;
-@property (nonatomic, retain)NSMutableArray *Titles2;
-@property (nonatomic, retain)NSMutableArray *podsections2;
-@property (nonatomic, retain)NSMutableArray *names2;
-@property (nonatomic, retain)NSString *SelectedName;
-@property (nonatomic, retain)NSString *SelectedTitle;
-@property (nonatomic, retain)NSString *ShopId;
-@property (nonatomic, retain)NSString *InfoTitle;
-@property (nonatomic, retain)NSArray *info2;
-@property (nonatomic) BOOL AfterMap;
-@property (nonatomic, retain)NSString *TitleForInfo;
-@property (nonatomic) BOOL InfoClosed;
-@property (nonatomic) BOOL FilterOpen;
-@property (nonatomic, retain)NSString *imageURL;
-@property (nonatomic, retain)NSString *price;
 
--(void)test;
+@property (nonatomic, retain)NSMutableArray *TitlesForAllPodsection;
+@property (nonatomic, retain)NSMutableArray *TitlesForPodsectionInStroySection;
+@property (nonatomic, retain)NSMutableArray *AllPodPodsection;
+@property (nonatomic, retain)NSMutableArray *PodPodSectionForStroySection;
+@property (nonatomic, retain)NSMutableArray *NamesForRequestInMap;
+@property (nonatomic, retain)NSMutableArray *SelectedIndexesForTableViewController;
+@property (nonatomic, retain)NSString *NamesForRequestInCatalog;
+@property (nonatomic, retain)NSString *TitleForNavigationBar;
+@property (nonatomic, retain)NSString *SelectedShopId;
+@property (nonatomic, retain)NSString *TitleForShopInCatalog;
+@property (nonatomic, retain)NSArray *DataForInfoView;
+@property (nonatomic) BOOL AfterMap;
+@property (nonatomic, retain)NSString *TitleForInfoView;
+@property (nonatomic, retain)NSString *imageURL;
+@property (nonatomic, retain)NSString *priceForElementsOfCatalog;
+@property (nonatomic, retain)NSOperationQueue *AllOpetarions;
+
 
 +(Singleton*) sharedMySingleton;
 
