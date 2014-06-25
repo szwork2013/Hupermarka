@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>82CDD0F3-FAAF-460D-989A-1C208D2D7CFB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Hypermarka</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8F13547C-B651-4E5F-96DE-75DB517482DB</key>
+		<string>https://github.com/Alarikus/Hupermarka.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Hypermarka.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8F13547C-B651-4E5F-96DE-75DB517482DB</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Alarikus/Hupermarka.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8F13547C-B651-4E5F-96DE-75DB517482DB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8F13547C-B651-4E5F-96DE-75DB517482DB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Hupermarka</string>
+		</dict>
+	</array>
+</dict>
+</plist>
